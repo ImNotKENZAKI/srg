@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,900&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  <link href="css/funnel.css" rel="stylesheet">
+  <link href="css/funnel.css?v=20260704-apply-sticky" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -483,60 +483,70 @@
 
     <section class="funnel-section funnel-section--apply" id="apply">
       <div class="funnel-container funnel-apply-grid">
-        <div>
-          <p class="funnel-eyebrow">Qualification Application</p>
-          <h2>Apply for a Strategy Consultation</h2>
+        <div class="funnel-apply-panel">
+          <p class="funnel-eyebrow">Private Review Application</p>
+          <h2>Private CPA-Led Review</h2>
           <p>
-            Start with a short qualification application. SRG can then review the estimated planning range, complexity, timing, and whether a consultation is the right next step.
+            Complete the short application so SRG Advisors can review whether your business, asset, entity, real estate, estate, or tax planning situation may be a fit before a consultation is scheduled.
           </p>
-          <ul class="funnel-checklist funnel-checklist--compact">
-            <li>Business, real estate, income, entity, or asset complexity</li>
-            <li>Estimated planning range, timeline, and current CPA/advisor situation</li>
-            <li>Main concern and preferred contact details for follow-up</li>
-          </ul>
-          <p class="funnel-form-note">
-            Please do not submit tax returns, IDs, financial statements, or other sensitive documents through this initial form.
-          </p>
-          <p class="funnel-consent">
-            By submitting the form, you agree that SRG Advisors may contact you by phone, email, or text regarding your inquiry. Message and data rates may apply. This does not create a CPA-client relationship. Review the <a href="privacy.html">Privacy Policy</a>.
-          </p>
-        </div>
-        <div class="funnel-form-shell">
-          <div class="funnel-form-placeholder">
-            <p class="funnel-eyebrow">Qualification Form</p>
-            <div class="funnel-form-preview" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong></strong>
+          <div class="funnel-apply-card">
+            <strong>What SRG reviews before the next step</strong>
+            <ul class="funnel-checklist funnel-checklist--compact">
+              <li>Estimated planning range and timing</li>
+              <li>Business, real estate, K-1, trust, estate, or entity complexity</li>
+              <li>Whether a private consultation is the appropriate next step</li>
+            </ul>
+          </div>
+          <div class="funnel-review-path" aria-label="Application review path">
+            <div>
+              <span>Apply</span>
+              <p>Share high-level context through the secure intake form.</p>
             </div>
-            <h3>Secure strategy consultation application will appear here.</h3>
-            <p>The final form should route clear-fit applicants toward a calendar step and route uncertain-fit applicants to Carlyn and the SRG team for review.</p>
+            <div>
+              <span>Review</span>
+              <p>SRG reviews fit, complexity, and timing before booking.</p>
+            </div>
+            <div>
+              <span>Next Step</span>
+              <p>Qualified applicants can be routed toward a consultation.</p>
+            </div>
+          </div>
+          <p class="funnel-form-note">
+            Do not submit tax returns, IDs, financial statements, or other sensitive documents through this initial form. Submission does not create a CPA-client relationship. Review the <a href="https://srgadvisors.com/privacy.php">Privacy Policy</a>.
+          </p>
+          <a class="funnel-call-card" href="tel:2015251222" aria-label="Call SRG Advisors at 201-525-1222">
+            <span>Prefer to speak first?</span>
+            <strong>201-525-1222</strong>
+          </a>
+        </div>
+        <div class="funnel-form-shell funnel-form-shell--live">
+          <div class="funnel-form-live">
             <!--
-              GOHIGHLEVEL QUALIFICATION FORM EMBED GOES HERE.
-              Paste the GHL form iframe/script below this comment.
-              Recommended visible fields:
-              - First name, last name, email, phone
-              - Prospect type
-              - Review need
-              - Estimated planning range
-              - Business/entity ownership
-              - Real estate/K-1 activity
-              - Timeline
-              - Current CPA/advisor situation
-              - Situation summary
-              Recommended hidden fields:
-              - page_url, referrer, utm_source, utm_medium, utm_campaign, utm_content, service_interest
-              Recommended default redirect after submit:
-              - strategy-consultation-thank-you.html
+              GOHIGHLEVEL QUALIFICATION FORM EMBED.
+              Current post-submit redirect in GHL: https://imnotkenzaki.github.io/srg/strategy-consultation-thank-you.html
+              Replace with the final SRG-hosted thank-you URL when the funnel is deployed.
+              Future booking flow: keep calendar booking gated behind qualification.
             -->
-            <!--
-              FUTURE BOOKING FLOW:
-              Keep the calendar gated behind qualification.
-              Qualified route: tag as SRG Qualified - Calendar Eligible, notify Carlyn/team, then send or redirect to the calendar step.
-              Review route: tag as SRG Review Needed, notify Carlyn/team, and redirect to strategy-consultation-thank-you.html.
-              Suggested internal notification recipient: Carlyn first, with the SRG team copied or notified through GHL Conversations.
-            -->
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/cpYvPsitFjJtbRB8PRNI"
+              style="width:100%;height:1680px;min-height:1680px;border:none;border-radius:8px;overflow:hidden"
+              id="inline-cpYvPsitFjJtbRB8PRNI"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="SRG | Strategy Consultation Application Form"
+              data-height="1680"
+              data-layout-iframe-id="inline-cpYvPsitFjJtbRB8PRNI"
+              data-form-id="cpYvPsitFjJtbRB8PRNI"
+              title="SRG | Strategy Consultation Application Form"
+              loading="lazy"
+              scrolling="no">
+            </iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
           </div>
         </div>
       </div>
@@ -702,6 +712,6 @@
     <a class="funnel-mobile-cta__primary" href="#apply">Apply</a>
     <a class="funnel-mobile-cta__secondary" href="tel:12015251222">Call</a>
   </div>
-  <script src="js/funnel.js"></script>
+  <script src="js/funnel.js?v=20260704-apply-sticky"></script>
 </body>
 </html>
