@@ -2686,6 +2686,64 @@ body.funnel-page {
   font-size: 14px;
 }
 
+.funnel-booking-grid {
+  display: grid;
+  gap: 28px;
+}
+
+.funnel-booking-intro {
+  max-width: 760px;
+}
+
+.funnel-booking-intro a {
+  color: var(--srg-blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.funnel-booking-intro a:hover {
+  text-decoration: underline;
+}
+
+.funnel-calendar-shell {
+  background: var(--srg-white);
+  border: 1px solid var(--srg-line);
+  border-radius: 8px;
+  box-shadow: var(--srg-shadow);
+  overflow: hidden;
+}
+
+.funnel-calendar-shell iframe {
+  border: 0;
+  display: block;
+  min-height: 760px;
+  width: 100%;
+}
+
+.funnel-calendar-placeholder {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(49, 144, 231, 0.08), rgba(40, 203, 117, 0.08)), var(--srg-white);
+  color: var(--srg-slate);
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  min-height: 620px;
+  padding: 42px 24px;
+  text-align: center;
+}
+
+.funnel-calendar-placeholder strong {
+  color: var(--srg-ink);
+  font-family: "Lato", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.funnel-calendar-placeholder span {
+  color: var(--srg-muted);
+  max-width: 520px;
+}
+
 .funnel-footer {
   padding: 44px 0;
   background: var(--srg-white);
@@ -2839,6 +2897,15 @@ body.funnel-page {
 
   .funnel-btn {
     width: 100%;
+  }
+
+  .funnel-calendar-shell iframe {
+    min-height: 680px;
+  }
+
+  .funnel-calendar-placeholder {
+    min-height: 520px;
+    padding: 30px 18px;
   }
 
   .funnel-header .funnel-btn--small {
