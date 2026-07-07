@@ -32,6 +32,9 @@
     ".funnel-testimonials figure",
     ".funnel-process > div",
     ".funnel-thank-hero__grid > *",
+    ".funnel-qualified-booking__header",
+    ".funnel-calendar-shell--booking",
+    ".funnel-qualified-booking__actions",
     ".funnel-thank-steps article",
     ".funnel-thank-split > *",
     ".funnel-thank-list > div",
@@ -54,11 +57,11 @@
 
   var revealVariants = [
     {
-      selector: ".funnel-decision-grid > :first-child, .funnel-split > :first-child, .funnel-video-grid > :first-child, .funnel-apply-grid > :first-child, .funnel-after-grid > :first-child, .funnel-faq-grid > :first-child",
+      selector: ".funnel-decision-grid > :first-child, .funnel-split > :first-child, .funnel-video-grid > :first-child, .funnel-apply-grid > :first-child, .funnel-after-grid > :first-child, .funnel-faq-grid > :first-child, .funnel-thank-hero__grid > :first-child",
       name: "left"
     },
     {
-      selector: ".funnel-decision-grid > :last-child, .funnel-split > :last-child, .funnel-video-grid > :last-child, .funnel-apply-grid > :last-child, .funnel-after-grid > :last-child, .funnel-faq-grid > :last-child",
+      selector: ".funnel-decision-grid > :last-child, .funnel-split > :last-child, .funnel-video-grid > :last-child, .funnel-apply-grid > :last-child, .funnel-after-grid > :last-child, .funnel-faq-grid > :last-child, .funnel-thank-hero__grid > :last-child",
       name: "right"
     },
     {
@@ -131,6 +134,33 @@
 
   uniqueItems.forEach(function (item) {
     observer.observe(item);
+  });
+})();
+
+(function () {
+  var bookingTarget = document.getElementById("booking-calendar");
+  var bookingLinks = document.querySelectorAll('a[href="#booking-calendar"]');
+
+  if (!bookingTarget || !bookingLinks.length) {
+    return;
+  }
+
+  Array.prototype.forEach.call(bookingLinks, function (link) {
+    link.addEventListener("click", function (event) {
+      var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      event.preventDefault();
+      bookingTarget.scrollIntoView({
+        behavior: reducedMotion ? "auto" : "smooth",
+        block: "start"
+      });
+
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, "", "#booking-calendar");
+      } else {
+        window.location.hash = "booking-calendar";
+      }
+    });
   });
 })();
 

@@ -27,11 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,900&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  <link href="css/funnel.css?v=20260704-apply-sticky" rel="stylesheet">
-  <!--
-    THANK YOU PAGE TRACKING GOES HERE.
-    Recommended: fire GHL conversion event, Google Ads/GA4 conversion, Meta Lead event, and any call tracking source fields.
-  -->
+  <link href="css/funnel.css?v=20260707-booking-polish" rel="stylesheet">
 </head>
 <body class="funnel-page funnel-thank-page">
   <header class="funnel-header">
@@ -49,17 +45,21 @@
 
   <main>
     <section class="funnel-thank-hero" id="top">
+      <video class="funnel-thank-hero__video" autoplay muted loop playsinline preload="metadata" poster="images/generated/funnel-hero-cpa-concept-01.png" aria-hidden="true">
+        <source src="videos/srg-hero-cpa-loop.mp4" type="video/mp4">
+      </video>
       <div class="funnel-container funnel-thank-hero__grid">
-        <div>
+        <div class="funnel-thank-hero__copy">
           <p class="funnel-eyebrow">Qualified Next Step</p>
           <h1>Your request appears qualified for the next step.</h1>
           <p class="funnel-hero__lead">
             Choose a private consultation time below. SRG Advisors may still review the submitted details before confirming the appropriate next step.
           </p>
           <div class="funnel-hero__actions">
-            <a class="funnel-btn" href="#qualified-booking">Choose a Time</a>
+            <a class="funnel-btn" href="#booking-calendar">Choose a Time</a>
             <a class="funnel-btn funnel-btn--secondary" href="tel:12015251222">Call 201-525-1222</a>
           </div>
+          <p class="funnel-booking-cue">Calendar appears just below.</p>
           <p class="funnel-support">Scheduling does not create a CPA-client relationship or guarantee any tax, accounting, financial, or business outcome.</p>
         </div>
         <aside class="funnel-thank-panel" aria-label="Submission review status">
@@ -74,13 +74,13 @@
       </div>
     </section>
 
-    <section class="funnel-section funnel-section--light funnel-qualified-booking" id="qualified-booking" aria-labelledby="qualified-booking-title">
+    <section class="funnel-section funnel-section--light funnel-qualified-booking" id="booking-calendar" aria-labelledby="qualified-booking-title">
       <div class="funnel-container funnel-qualified-booking__inner">
         <div class="funnel-qualified-booking__header">
           <p class="funnel-eyebrow">Private Consultation Calendar</p>
-          <h2 id="qualified-booking-title">Choose a private consultation time below.</h2>
+          <h2 id="qualified-booking-title">Select your private consultation time.</h2>
           <p>
-            This calendar is intended for applicants who appear qualified for the next step after submitting the SRG strategy consultation application.
+            Use the calendar below to request a time while SRG completes its review of your application details.
           </p>
         </div>
 
@@ -198,7 +198,7 @@
     </div>
   </footer>
 
-  <script src="js/funnel.js?v=20260704-apply-sticky"></script>
+  <script src="js/funnel.js?v=20260707-booking-polish"></script>
   <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
