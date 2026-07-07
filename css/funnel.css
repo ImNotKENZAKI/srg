@@ -2898,6 +2898,67 @@ body.funnel-page {
   max-width: 520px;
 }
 
+.funnel-qualified-booking {
+  background: linear-gradient(180deg, #f7fbff 0%, var(--srg-white) 100%);
+}
+
+.funnel-qualified-booking__inner {
+  display: grid;
+  gap: 24px;
+  max-width: 1100px;
+}
+
+.funnel-qualified-booking__header {
+  max-width: 760px;
+}
+
+.funnel-qualified-booking__header p:not(.funnel-eyebrow) {
+  color: var(--srg-muted);
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 16px 0 0;
+}
+
+.funnel-calendar-shell--booking {
+  border-color: rgba(49, 144, 231, 0.2);
+  position: relative;
+}
+
+.funnel-calendar-shell--booking::before {
+  background: linear-gradient(90deg, var(--srg-blue), var(--srg-green));
+  content: "";
+  display: block;
+  height: 5px;
+}
+
+.funnel-calendar-shell--booking iframe {
+  min-height: 820px;
+}
+
+.funnel-qualified-booking__actions {
+  align-items: center;
+  background: var(--srg-white);
+  border: 1px solid rgba(221, 230, 238, 0.95);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 18px 20px;
+}
+
+.funnel-qualified-booking__actions p {
+  color: var(--srg-muted);
+  flex: 1 1 520px;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.funnel-btn--booking-fallback {
+  min-width: 220px;
+}
+
 .funnel-footer {
   padding: 44px 0;
   background: var(--srg-white);
@@ -3055,6 +3116,23 @@ body.funnel-page {
 
   .funnel-calendar-shell iframe {
     min-height: 680px;
+  }
+
+  .funnel-calendar-shell--booking iframe {
+    min-height: 760px;
+  }
+
+  .funnel-qualified-booking__header p:not(.funnel-eyebrow) {
+    font-size: 16px;
+  }
+
+  .funnel-qualified-booking__actions {
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .funnel-btn--booking-fallback {
+    min-width: 0;
   }
 
   .funnel-calendar-placeholder {
