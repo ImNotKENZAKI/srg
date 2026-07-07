@@ -26,9 +26,13 @@
   <link rel="preload" as="image" href="images/generated/funnel-hero-cpa-concept-01.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
+  <link rel="preconnect" href="https://link.msgsndr.com" crossorigin>
+  <link rel="dns-prefetch" href="//api.leadconnectorhq.com">
+  <link rel="dns-prefetch" href="//link.msgsndr.com">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,900&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  <link href="css/funnel.css?v=20260704-apply-sticky" rel="stylesheet">
+  <link href="css/funnel.css?v=20260707-ghl-loader" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -521,6 +525,25 @@
         </div>
         <div class="funnel-form-shell funnel-form-shell--live">
           <div class="funnel-form-live">
+            <div class="funnel-form-loader" data-ghl-form-loader role="status" aria-live="polite">
+              <div class="funnel-form-loader__head">
+                <span class="funnel-form-loader__spinner" aria-hidden="true"></span>
+                <div>
+                  <strong>Loading secure application form</strong>
+                  <p>Connecting to the SRG Advisors application form. This can take a few seconds.</p>
+                </div>
+              </div>
+              <div class="funnel-form-loader__preview" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p class="funnel-form-loader__fallback">
+                If the form stays blank, refresh this page or call <a href="tel:2015251222">201-525-1222</a>.
+              </p>
+            </div>
             <!--
               GOHIGHLEVEL QUALIFICATION FORM EMBED.
               Current post-submit redirect in GHL: https://imnotkenzaki.github.io/srg/strategy-consultation-thank-you.html
@@ -543,7 +566,7 @@
               data-layout-iframe-id="inline-cpYvPsitFjJtbRB8PRNI"
               data-form-id="cpYvPsitFjJtbRB8PRNI"
               title="SRG | Strategy Consultation Application Form"
-              loading="lazy"
+              loading="eager"
               scrolling="no">
             </iframe>
             <script src="https://link.msgsndr.com/js/form_embed.js"></script>
@@ -712,6 +735,6 @@
     <a class="funnel-mobile-cta__primary" href="#apply">Apply</a>
     <a class="funnel-mobile-cta__secondary" href="tel:12015251222">Call</a>
   </div>
-  <script src="js/funnel.js?v=20260704-apply-sticky"></script>
+  <script src="js/funnel.js?v=20260707-ghl-loader"></script>
 </body>
 </html>

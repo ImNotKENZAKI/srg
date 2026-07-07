@@ -133,3 +133,45 @@
     observer.observe(item);
   });
 })();
+
+(function () {
+  var formFrame = document.getElementById("inline-cpYvPsitFjJtbRB8PRNI");
+  var formLoader = document.querySelector("[data-ghl-form-loader]");
+
+  if (!formFrame || !formLoader) {
+    return;
+  }
+
+  var formShell = formFrame.closest ? formFrame.closest(".funnel-form-shell") : null;
+  var hasLoaded = false;
+
+  if (formShell) {
+    formShell.setAttribute("aria-busy", "true");
+  }
+
+  var markFormLoaded = function () {
+    if (hasLoaded) {
+      return;
+    }
+
+    hasLoaded = true;
+    formLoader.classList.add("funnel-form-loader--hidden");
+
+    if (formShell) {
+      formShell.classList.add("funnel-form-shell--loaded");
+      formShell.setAttribute("aria-busy", "false");
+    }
+
+    window.setTimeout(function () {
+      formLoader.setAttribute("hidden", "");
+    }, 320);
+  };
+
+  formFrame.addEventListener("load", markFormLoaded);
+
+  window.setTimeout(function () {
+    if (!hasLoaded) {
+      formLoader.classList.add("funnel-form-loader--slow");
+    }
+  }, 8000);
+})();
