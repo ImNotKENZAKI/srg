@@ -32,6 +32,12 @@
     ".funnel-testimonials figure",
     ".funnel-process > div",
     ".funnel-thank-hero__grid > *",
+    ".funnel-outcome-hero__copy",
+    ".funnel-outcome-panel",
+    ".funnel-booking-card",
+    ".funnel-next-grid article",
+    ".funnel-outcome-split > *",
+    ".funnel-outcome-card",
     ".funnel-qualified-booking__header",
     ".funnel-calendar-shell--booking",
     ".funnel-qualified-booking__actions",
@@ -57,11 +63,11 @@
 
   var revealVariants = [
     {
-      selector: ".funnel-decision-grid > :first-child, .funnel-split > :first-child, .funnel-video-grid > :first-child, .funnel-apply-grid > :first-child, .funnel-after-grid > :first-child, .funnel-faq-grid > :first-child, .funnel-thank-hero__grid > :first-child",
+      selector: ".funnel-decision-grid > :first-child, .funnel-split > :first-child, .funnel-video-grid > :first-child, .funnel-apply-grid > :first-child, .funnel-after-grid > :first-child, .funnel-faq-grid > :first-child, .funnel-thank-hero__grid > :first-child, .funnel-outcome-grid > :first-child, .funnel-booking-layout > :first-child",
       name: "left"
     },
     {
-      selector: ".funnel-decision-grid > :last-child, .funnel-split > :last-child, .funnel-video-grid > :last-child, .funnel-apply-grid > :last-child, .funnel-after-grid > :last-child, .funnel-faq-grid > :last-child, .funnel-thank-hero__grid > :last-child",
+      selector: ".funnel-decision-grid > :last-child, .funnel-split > :last-child, .funnel-video-grid > :last-child, .funnel-apply-grid > :last-child, .funnel-after-grid > :last-child, .funnel-faq-grid > :last-child, .funnel-thank-hero__grid > :last-child, .funnel-outcome-grid > :last-child, .funnel-booking-layout > :last-child",
       name: "right"
     },
     {
@@ -166,7 +172,7 @@
 
 (function () {
   var formFrame = document.getElementById("inline-cpYvPsitFjJtbRB8PRNI");
-  var formLoader = document.querySelector("[data-ghl-form-loader]");
+  var formLoader = document.querySelector("[data-form-loader]");
 
   if (!formFrame || !formLoader) {
     return;
