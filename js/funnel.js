@@ -171,7 +171,7 @@
 })();
 
 (function () {
-  var formFrame = document.getElementById("inline-cpYvPsitFjJtbRB8PRNI");
+  var formFrame = document.querySelector("[data-srg-form-frame]");
   var formLoader = document.querySelector("[data-form-loader]");
 
   if (!formFrame || !formLoader) {
@@ -180,9 +180,26 @@
 
   var formShell = formFrame.closest ? formFrame.closest(".funnel-form-shell") : null;
   var hasLoaded = false;
+  var scrollingObserver = null;
+
+  var preventNestedScrolling = function () {
+    if (formFrame.getAttribute("scrolling") !== "no") {
+      formFrame.setAttribute("scrolling", "no");
+    }
+  };
 
   if (formShell) {
     formShell.setAttribute("aria-busy", "true");
+  }
+
+  preventNestedScrolling();
+
+  if (window.MutationObserver) {
+    scrollingObserver = new MutationObserver(preventNestedScrolling);
+    scrollingObserver.observe(formFrame, {
+      attributes: true,
+      attributeFilter: ["scrolling"]
+    });
   }
 
   var markFormLoaded = function () {
@@ -204,6 +221,12 @@
   };
 
   formFrame.addEventListener("load", markFormLoaded);
+
+  if (document.readyState === "complete") {
+    markFormLoaded();
+  } else {
+    window.addEventListener("load", markFormLoaded, { once: true });
+  }
 
   window.setTimeout(function () {
     if (!hasLoaded) {
