@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">IRS Tax Resolution and Disputes</title>
+  <desc id="desc">A protective shield with balanced resolution scales.</desc>
+  <g fill="none" stroke="#173F5B" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <path d="M32 9 49 15v13c0 12-7 21-17 27-10-6-17-15-17-27V15z"/>
+    <path d="M32 22v17M23 27h18M25 27l-5 9h10zM39 27l-5 9h10zM26 44h12"/>
+  </g>
+  <circle cx="32" cy="16" r="3.5" fill="#C9A227"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">US Tax Planning</title>
+  <desc id="desc">A planning document with a three-bar chart and upward planning arrow.</desc>
+  <g fill="none" stroke="#173F5B" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <path d="M18 9h22l8 8v38H18z"/>
+    <path d="M40 9v9h8M24 46h18M26 43V36M32 43V31M38 43V26"/>
+    <path d="m24 31 8-7 8-4M37 20h3v3"/>
+  </g>
+  <circle cx="40" cy="20" r="3" fill="#C9A227"/>
+</svg>
