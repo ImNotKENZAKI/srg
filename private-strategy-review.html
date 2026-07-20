@@ -11,6 +11,386 @@
   <meta name="theme-color" content="#102f44">
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/private-strategy-review-v3.css">
+  <style>
+    /*
+     * SRG Step 2 conversion polish
+     * Intentionally scoped to this page so no other production file is changed.
+     */
+    .review-hero {
+      min-height: 100svh;
+      padding-top: 118px;
+      padding-bottom: 76px;
+      background:
+        radial-gradient(circle at 77% 12%, rgba(201, 162, 39, .09), transparent 25%),
+        #102f44;
+    }
+
+    .review-hero__image img {
+      object-position: 66% center;
+      filter: saturate(.62) contrast(1.08) brightness(.72);
+      transform: scale(1.018);
+    }
+
+    .review-hero__veil {
+      background:
+        linear-gradient(90deg, rgba(5, 25, 37, .995) 0%, rgba(8, 34, 49, .97) 45%, rgba(8, 34, 49, .69) 73%, rgba(5, 25, 37, .82) 100%),
+        linear-gradient(0deg, rgba(5, 25, 37, .86), transparent 62%);
+    }
+
+    .review-layout {
+      grid-template-columns: minmax(0, .94fr) minmax(510px, 590px);
+      gap: clamp(42px, 5.5vw, 82px);
+      align-items: start;
+    }
+
+    .review-copy {
+      position: sticky;
+      top: 106px;
+      padding-top: 14px;
+    }
+
+    .review-copy::before {
+      height: 112px;
+      top: 21px;
+      background: linear-gradient(180deg, #c9a227, rgba(201, 162, 39, 0));
+    }
+
+    .review-kicker {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-kicker::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: #c9a227;
+    }
+
+    .review-copy h1 {
+      max-width: 700px;
+      font-size: clamp(48px, 4.6vw, 70px);
+      line-height: .98;
+      letter-spacing: -.048em;
+    }
+
+    .review-copy h1 span,
+    .review-copy h1 em {
+      text-wrap: balance;
+    }
+
+    .review-copy h1 em {
+      max-width: 680px;
+      margin-top: 10px;
+      color: #dcecf4;
+      font-style: italic;
+    }
+
+    .review-lead {
+      max-width: 620px;
+      margin-top: 25px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .review-momentum {
+      max-width: 640px;
+      margin-top: 28px;
+      padding: 20px 22px 18px;
+      border: 1px solid rgba(220, 236, 244, .18);
+      background: linear-gradient(135deg, rgba(220, 236, 244, .10), rgba(220, 236, 244, .035));
+      box-shadow: inset 0 1px rgba(255, 255, 255, .035);
+    }
+
+    .review-momentum__top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+    }
+
+    .review-momentum__top strong {
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: .01em;
+    }
+
+    .review-momentum__top span {
+      color: rgba(255, 255, 255, .58);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .review-progress-track {
+      position: relative;
+      height: 2px;
+      margin: 17px 5px 15px;
+      overflow: visible;
+      background: rgba(255, 255, 255, .16);
+    }
+
+    .review-progress-track::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 100%;
+      background: linear-gradient(90deg, #c9a227, #e0c351);
+      transform-origin: left center;
+      animation: srg-progress-reveal .72s cubic-bezier(.2, .8, .2, 1) both .15s;
+    }
+
+    .review-progress-track span {
+      position: absolute;
+      top: 50%;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid #c9a227;
+      background: #102f44;
+      box-shadow: 0 0 0 5px rgba(201, 162, 39, .12);
+    }
+
+    .review-progress-track span:first-child { left: 0; }
+    .review-progress-track span:last-child { left: 100%; }
+
+    .review-progress-labels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .review-progress-labels div:last-child { text-align: right; }
+    .review-progress-labels strong { display: block; color: #fff; font-size: 11px; }
+    .review-progress-labels small { display: block; margin-top: 4px; color: rgba(255, 255, 255, .57); font-size: 10px; line-height: 1.4; }
+
+    .review-value-list {
+      max-width: 640px;
+      margin: 18px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      list-style: none;
+    }
+
+    .review-value-list li {
+      min-height: 84px;
+      padding: 13px 14px;
+      border-top: 1px solid rgba(201, 162, 39, .7);
+      background: rgba(5, 25, 37, .24);
+    }
+
+    .review-value-list strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .review-value-list span {
+      display: block;
+      color: rgba(255, 255, 255, .56);
+      font-size: 10px;
+      line-height: 1.45;
+    }
+
+    .secure-note {
+      max-width: 640px;
+      margin-top: 20px;
+      padding: 17px 19px;
+      background: linear-gradient(90deg, rgba(220, 236, 244, .095), rgba(220, 236, 244, .025));
+    }
+
+    .secure-note strong { font-size: 18px; }
+    .secure-note p { margin-top: 6px; }
+
+    .review-expectations {
+      max-width: 640px;
+      margin-top: 15px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, .10);
+    }
+
+    .review-expectations p {
+      margin: 0;
+      color: rgba(255, 255, 255, .54);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .review-expectations p + p { margin-top: 5px; }
+
+    .review-form-shell {
+      border-radius: 12px;
+      border-color: rgba(220, 236, 244, .46);
+      box-shadow: 0 32px 88px rgba(0, 0, 0, .37), 0 0 0 1px rgba(255, 255, 255, .06);
+      animation: srg-card-enter .62s cubic-bezier(.2, .8, .2, 1) both .08s;
+    }
+
+    .review-form-heading {
+      padding: 23px 27px 21px;
+      background:
+        radial-gradient(circle at 90% 8%, rgba(201, 162, 39, .18), transparent 30%),
+        linear-gradient(135deg, #082638 0%, #123d57 100%);
+    }
+
+    .review-form-heading::after { display: none; }
+
+    .review-form-progress {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .review-form-progress span {
+      display: inline-flex;
+      min-height: 28px;
+      padding: 6px 10px;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255, 255, 255, .68);
+      border: 1px solid rgba(255, 255, 255, .14);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .review-form-progress span:first-child {
+      color: #fff;
+      border-color: rgba(201, 162, 39, .55);
+      background: rgba(201, 162, 39, .12);
+    }
+
+    .review-form-progress span:first-child::before {
+      content: "✓";
+      color: #e2c34d;
+      font-size: 11px;
+    }
+
+    .review-form-progress span:last-child::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e2c34d;
+      box-shadow: 0 0 0 4px rgba(201, 162, 39, .13);
+    }
+
+    .review-form-heading p {
+      margin-bottom: 7px;
+      color: #e2c34d;
+    }
+
+    .review-form-heading h2 {
+      max-width: 480px;
+      color: #fff;
+      font-size: clamp(27px, 2.3vw, 32px);
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .review-form-heading__support {
+      max-width: 500px;
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, .70);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .review-form-trust {
+      margin: 15px 0 0;
+      padding-top: 13px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255, 255, 255, .58);
+      border-top: 1px solid rgba(255, 255, 255, .11);
+      font-size: 9px;
+      line-height: 1.45;
+    }
+
+    .review-form-trust::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: #c9a227;
+      box-shadow: 0 0 0 5px rgba(201, 162, 39, .12);
+    }
+
+    .review-form-loader { margin: 18px 20px; }
+
+    .review-notice {
+      padding: 40px 0;
+      background: #f4f8fa;
+    }
+
+    @keyframes srg-progress-reveal {
+      from { transform: scaleX(0); opacity: .45; }
+      to { transform: scaleX(1); opacity: 1; }
+    }
+
+    @keyframes srg-card-enter {
+      from { opacity: 0; transform: translateY(16px) scale(.992); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 1120px) {
+      .review-layout { grid-template-columns: minmax(0, .9fr) minmax(480px, 550px); gap: 40px; }
+      .review-value-list { grid-template-columns: 1fr; }
+      .review-value-list li { min-height: 0; }
+    }
+
+    @media (max-width: 1023px) {
+      .review-hero { padding-top: 106px; }
+      .review-layout { grid-template-columns: 1fr; gap: 40px; }
+      .review-copy { position: relative; top: auto; }
+      .review-copy::before { display: none; }
+      .review-copy h1 { max-width: 760px; }
+      .review-value-list { grid-template-columns: repeat(3, 1fr); }
+      .review-form-shell { max-width: 760px; }
+    }
+
+    @media (max-width: 720px) {
+      .review-value-list { grid-template-columns: 1fr; }
+      .review-value-list li { min-height: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .review-hero { padding-top: 88px; padding-bottom: 50px; }
+      .review-copy { padding-top: 270px; }
+      .review-copy h1 { font-size: clamp(42px, 12vw, 54px); }
+      .review-kicker { font-size: 8px; letter-spacing: .16em; }
+      .review-lead { margin-top: 20px; font-size: 14px; }
+      .review-momentum { margin-top: 22px; padding: 17px 16px 16px; }
+      .review-progress-labels { gap: 10px; }
+      .review-progress-labels small { font-size: 9px; }
+      .secure-note { padding: 16px; }
+      .review-form-shell { margin-inline: -8px; }
+      .review-form-heading { padding: 20px 19px 18px; }
+      .review-form-progress { flex-wrap: wrap; gap: 7px; }
+      .review-form-progress span { min-height: 26px; padding: 5px 8px; }
+      .review-form-heading h2 { font-size: 26px; }
+      .review-form-heading__support { font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .review-progress-track::before,
+      .review-form-shell {
+        animation: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#step-two-main">Skip to Step 2</a>
@@ -28,36 +408,62 @@
         <img src="images/short-funnel/photos/05-jay-document-review-desk.webp" width="1448" height="1086" alt="" fetchpriority="high" decoding="async">
       </div>
       <div class="review-hero__veil" aria-hidden="true"></div>
+
       <div class="review-shell review-layout">
         <div class="review-copy">
-          <p class="review-kicker">Step 2 of 2</p>
-          <h1 id="review-title"><span>Complete Your Private</span><em>Strategy Review.</em></h1>
-          <p class="review-lead">Share the context SRG needs to understand your tax, business, and financial situation. Every completed application is reviewed manually before any consultation or booking link is offered.</p>
+          <p class="review-kicker">Step 2 of 2 · Final review details</p>
+          <h1 id="review-title">
+            <span>Your first step is complete.</span>
+            <em>Help SRG see the full picture.</em>
+          </h1>
+          <p class="review-lead">Your contact information has been received. These focused questions help SRG understand the scope, timing, and complexity of your situation before deciding the appropriate next step.</p>
 
-          <div class="review-steps" aria-label="What happens after submission">
-            <article><span>Complete</span><p>Submit the existing detailed Private Strategy Review questions.</p></article>
-            <article><span>Review</span><p>SRG manually reviews the application and may follow up for clarification.</p></article>
-            <article><span>Next step</span><p>SRG provides the appropriate next step after its review.</p></article>
-          </div>
+          <section class="review-momentum" aria-labelledby="application-progress-title">
+            <div class="review-momentum__top">
+              <strong id="application-progress-title">Your application is already in progress</strong>
+              <span>Final step</span>
+            </div>
+            <div class="review-progress-track" aria-hidden="true"><span></span><span></span></div>
+            <div class="review-progress-labels">
+              <div><strong>Contact details received</strong><small>Step 1 is complete.</small></div>
+              <div><strong>Review details</strong><small>Complete the final questions below.</small></div>
+            </div>
+          </section>
+
+          <ul class="review-value-list" aria-label="Why SRG asks for these details">
+            <li><strong>Focused questions</strong><span>Share only the details relevant to SRG's initial review.</span></li>
+            <li><strong>Private manual review</strong><span>SRG reviews every completed application before scheduling.</span></li>
+            <li><strong>Appropriate next step</strong><span>SRG follows up after review when your situation may be a fit.</span></li>
+          </ul>
 
           <aside class="secure-note">
             <strong>Protect sensitive information.</strong>
-            <p>Do not send tax returns, IDs, financial statements, or other sensitive documents through ordinary email. When applicable, SRG will provide secure document-submission instructions.</p>
+            <p>Do not send tax returns, IDs, financial statements, or other sensitive documents through this form or ordinary email. When applicable, SRG will provide secure document-submission instructions.</p>
           </aside>
 
           <div class="review-expectations">
-            <p>Submitting this form does not automatically schedule a consultation.</p>
-            <p>A booking link is sent only after manual approval, when appropriate.</p>
-            <p>The default consultation is by phone. Zoom or Microsoft Teams may be requested. In-person consultations require Jay&rsquo;s approval, and a paid consultation may apply depending on the case.</p>
+            <p>Submitting this form does not automatically schedule a consultation or create a CPA-client relationship.</p>
+            <p>A booking link is provided only after manual approval, when appropriate. The default consultation is by phone. Zoom or Microsoft Teams may be requested. In-person consultations require Jay's approval, and a paid consultation may apply depending on the case.</p>
           </div>
         </div>
 
         <div class="review-form-shell" data-review-form-shell aria-label="Step 2 private strategy review form">
-          <div class="review-form-heading"><p>Step Two</p><h2>Tell SRG about your situation.</h2></div>
+          <div class="review-form-heading">
+            <div class="review-form-progress" aria-label="Application progress">
+              <span>Contact details complete</span>
+              <span>Review details active</span>
+            </div>
+            <p>One final step</p>
+            <h2>Complete Your Private Strategy Review</h2>
+            <p class="review-form-heading__support">Your contact details are already on file. Complete the questions below so SRG can evaluate your situation before determining the appropriate next step.</p>
+            <p class="review-form-trust">Reviewed privately by SRG. No booking link is issued automatically.</p>
+          </div>
+
           <div class="review-form-loader" data-form-loader role="status" aria-live="polite">
             <span aria-hidden="true"></span>
             <div><strong>Loading the detailed review</strong><p>Connecting to the SRG Advisors form. This can take a few seconds.</p></div>
           </div>
+
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/AU21lU4ZE6oG9Ia9taW0"
             style="width:100%;height:920px;border:none;border-radius:0;overflow:hidden"
@@ -92,7 +498,7 @@
   </main>
 
   <footer class="review-footer">
-    <div class="review-shell"><p>SRG Advisors, LLC &middot; Private Strategy Review</p><a href="tel:12015251222">201-525-1222</a></div>
+    <div class="review-shell"><p>SRG Advisors, LLC · Private Strategy Review</p><a href="tel:12015251222">201-525-1222</a></div>
   </footer>
 
   <script src="https://link.msgsndr.com/js/form_embed.js"></script>
