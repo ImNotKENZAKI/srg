@@ -4141,3 +4141,240 @@ body.funnel-page {
     min-height: 700px;
   }
 }
+
+
+/* ==========================================================================\n   SRG premium Step 1 host alignment — 2026-07-20\n   Keeps the same GHL form and workflow. This only refines the original\n   strategy-consultation page so the shared form also feels premium there.\n   ========================================================================== */
+.funnel-page .funnel-section--apply {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 78px 0;
+  color: var(--srg-white);
+  background:
+    linear-gradient(90deg, rgba(5, 25, 37, 0.98) 0%, rgba(7, 31, 45, 0.94) 46%, rgba(7, 31, 45, 0.82) 100%),
+    url("../images/short-funnel/photos/05-jay-document-review-desk.webp") 68% center / cover no-repeat;
+  border-top: 1px solid rgba(201, 162, 39, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.funnel-page .funnel-section--apply::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 78% 38%, rgba(201, 162, 39, 0.10), transparent 23%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.025), transparent 34%);
+}
+
+.funnel-page .funnel-section--apply .funnel-container {
+  width: min(1180px, calc(100% - 48px));
+}
+
+.funnel-page .funnel-section--apply .funnel-apply-grid {
+  grid-template-columns: minmax(330px, 0.88fr) minmax(520px, 1.12fr);
+  gap: clamp(36px, 4.5vw, 64px);
+  align-items: center;
+}
+
+.funnel-page .funnel-section--apply .funnel-apply-panel {
+  position: relative;
+  top: auto;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(7, 30, 44, 0.78);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.24);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.funnel-page .funnel-section--apply .funnel-apply-panel::before {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c9a227 18%, #e0c24b 52%, #c9a227 82%, transparent);
+}
+
+.funnel-page .funnel-section--apply .funnel-apply-panel h2 {
+  max-width: 12ch;
+  font-size: clamp(36px, 3.35vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.funnel-page .funnel-section--apply .funnel-form-shell--live {
+  width: min(100%, 620px);
+  justify-self: end;
+  align-self: center;
+  border: 1px solid rgba(220, 236, 244, 0.82);
+  border-top: 3px solid #c9a227;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 28px 76px rgba(0, 0, 0, 0.27), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* The live GHL embed already reports its actual height. The previous 811px
+   minimum created the large empty white block visible on the old page. */
+.funnel-page .funnel-section--apply .funnel-form-live--step-one {
+  min-height: 0;
+}
+
+.funnel-page .funnel-section--apply .funnel-form-live,
+.funnel-page .funnel-section--apply .funnel-form-live iframe {
+  border-radius: 0 0 10px 10px;
+}
+
+@media (max-width: 980px) {
+  .funnel-page .funnel-section--apply {
+    padding: 64px 0;
+    background-position: 72% center;
+  }
+
+  .funnel-page .funnel-section--apply .funnel-apply-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .funnel-page .funnel-section--apply .funnel-apply-panel,
+  .funnel-page .funnel-section--apply .funnel-form-shell--live {
+    width: 100%;
+    max-width: 760px;
+    margin-inline: auto;
+    justify-self: center;
+  }
+
+  .funnel-page .funnel-section--apply .funnel-apply-panel h2 {
+    max-width: 14ch;
+  }
+}
+
+@media (max-width: 740px) {
+  .funnel-page .funnel-section--apply {
+    padding: 48px 0;
+    background:
+      linear-gradient(180deg, rgba(5, 25, 37, 0.98), rgba(7, 31, 45, 0.94)),
+      url("../images/short-funnel/photos/05-jay-document-review-desk.webp") 70% center / cover no-repeat;
+  }
+
+  .funnel-page .funnel-section--apply .funnel-container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .funnel-page .funnel-section--apply .funnel-apply-panel {
+    padding: 24px 20px;
+  }
+
+  .funnel-page .funnel-section--apply .funnel-apply-panel h2 {
+    font-size: clamp(34px, 11vw, 44px);
+  }
+
+  .funnel-page .funnel-section--apply .funnel-form-shell--live {
+    border-radius: 10px;
+  }
+}
+
+
+/* ========================================================================== 
+   SRG V4 final application-section polish
+   ========================================================================== */
+.funnel-section--apply {
+  position: relative;
+  overflow: hidden;
+  background: #0a2739;
+}
+.funnel-section--apply::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5,25,37,.97), rgba(8,34,49,.82) 48%, rgba(8,34,49,.72)),
+    url("../images/short-funnel/photos/05-jay-document-review-desk.webp") 68% center / cover no-repeat;
+  opacity: .96;
+}
+.funnel-section--apply::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 76% 26%, rgba(220,236,244,.11), transparent 30%);
+}
+.funnel-section--apply .funnel-container { position: relative; z-index: 1; }
+.funnel-apply-grid {
+  grid-template-columns: minmax(330px, .82fr) minmax(520px, 1.18fr);
+  gap: clamp(34px, 5vw, 72px);
+  align-items: center;
+}
+.funnel-apply-panel {
+  top: 108px;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.funnel-apply-panel::before { display: none; }
+.funnel-apply-panel h2 {
+  max-width: 540px;
+  margin-bottom: 17px;
+  font-size: clamp(39px, 3.7vw, 58px);
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+.funnel-apply-panel .funnel-eyebrow { color: #e2c34d; }
+.funnel-apply-intro { max-width: 560px; font-size: 16px; line-height: 1.65; }
+.funnel-review-path {
+  margin-top: 27px;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+.funnel-review-path > div {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 15px;
+  padding: 17px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  border-radius: 0;
+  background: transparent;
+}
+.funnel-review-path > div::before { display: none; }
+.funnel-review-path span {
+  grid-row: 1 / span 2;
+  padding-top: 2px;
+  color: #e2c34d;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+.funnel-review-path strong { color: #fff; font-size: 15px; }
+.funnel-review-path p { margin-top: 5px; font-size: 13px; line-height: 1.5; }
+.funnel-apply-panel .funnel-form-note {
+  margin-top: 20px;
+  padding: 15px 17px;
+  border-left: 2px solid #e2c34d;
+  background: rgba(220,236,244,.07);
+  color: rgba(255,255,255,.72);
+}
+.funnel-call-card {
+  margin-top: 14px;
+  border-color: rgba(201,162,39,.34);
+  background: rgba(201,162,39,.08);
+}
+.funnel-call-card:hover { border-color: rgba(201,162,39,.58); background: rgba(201,162,39,.12); }
+.funnel-form-shell--live {
+  max-width: 640px;
+  width: 100%;
+  justify-self: end;
+  border: 1px solid rgba(220,236,244,.48);
+  border-top: 4px solid #c9a227;
+  border-radius: 10px;
+  box-shadow: 0 28px 74px rgba(0,0,0,.32), 0 0 0 1px rgba(255,255,255,.06);
+}
+.funnel-form-live--step-one { min-height: 690px; }
+.funnel-form-live iframe { border-radius: 0 !important; }
+
+@media (max-width: 1023px) {
+  .funnel-apply-grid { grid-template-columns: 1fr; }
+  .funnel-apply-panel { position: relative; top: auto; }
+  .funnel-form-shell--live { max-width: 760px; justify-self: start; }
+}

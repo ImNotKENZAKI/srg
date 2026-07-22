@@ -180,6 +180,32 @@
 
   var formShell = formFrame.closest ? formFrame.closest(".funnel-form-shell") : null;
   var hasLoaded = false;
+
+  var parseHeight = function (payload) {
+    var value = payload;
+    if (typeof value === "string") {
+      try { value = JSON.parse(value); }
+      catch (error) {
+        var match = value.match(/(?:height|iframeHeight)[^0-9]{0,12}([0-9]{3,4})/i);
+        return match ? Number(match[1]) : null;
+      }
+    }
+    if (!value || typeof value !== "object") return null;
+    var keys = Object.keys(value);
+    for (var i = 0; i < keys.length; i += 1) {
+      if (/height/i.test(keys[i]) && isFinite(Number(value[keys[i]]))) return Number(value[keys[i]]);
+    }
+    return null;
+  };
+
+  window.addEventListener("message", function (event) {
+    if (!/leadconnectorhq\.com|msgsndr\.com/.test(event.origin || "")) return;
+    var height = parseHeight(event.data);
+    if (!height) return;
+    height = Math.max(590, Math.min(1200, Math.round(height + 8)));
+    formFrame.style.height = height + "px";
+    formFrame.setAttribute("data-height", String(height));
+  });
   var scrollingObserver = null;
 
   var preventNestedScrolling = function () {
