@@ -12,6 +12,8 @@
   var finalScene = document.querySelector('[data-final-scene]');
   var frameRequested = false;
   var headerScrolled = null;
+  var naturalRevealsInitialized = false;
+  var editorialRevealsInitialized = false;
   var reviewParams = new URLSearchParams(window.location.search);
   var localReviewMode = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) && reviewParams.get('review') === '1';
 
@@ -25,6 +27,10 @@
 
   function toArray(collection) {
     return Array.prototype.slice.call(collection || []);
+  }
+
+  function isCinematicMode() {
+    return root.classList.contains('cinematic-ready');
   }
 
   function createStageController(options) {
@@ -112,7 +118,7 @@
         background.classList.toggle('is-entering', backgroundIndex === index && backgroundIndex !== activeIndex);
       });
 
-      if (immediate || reduceMotion || window.innerWidth <= 1024) {
+      if (immediate || !isCinematicMode()) {
         reveal(index);
         return;
       }
@@ -184,7 +190,7 @@
     }
 
     function updateFromScroll() {
-      if (!scene || reduceMotion || window.innerWidth <= 1024) return;
+      if (!scene || !isCinematicMode()) return;
       var rect = scene.getBoundingClientRect();
       var distance = Math.max(scene.offsetHeight - window.innerHeight, 1);
       var progress = clamp(-rect.top / distance, 0, 1);
@@ -196,7 +202,7 @@
       if (!scene || !states.length) return;
       index = clamp(Math.round(index), 0, states.length - 1);
 
-      if (window.innerWidth <= 1024 || reduceMotion) {
+      if (!isCinematicMode()) {
         states[index].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
         return;
       }
@@ -221,16 +227,10 @@
       states: states,
       goTo: goTo,
       updateFromScroll: updateFromScroll,
-      scrollToIndex: scrollToIndex
+      scrollToIndex: scrollToIndex,
+      settle: function () { reveal(activeIndex); }
     };
   }
-
-  var situationController = createStageController({
-    scene: '[data-situation-scene]',
-    states: '[data-situation-state]',
-    cues: '.situation-cues span',
-    cueCurrent: false
-  });
 
   var servicesController = createStageController({
     scene: '[data-services-scene]',
@@ -245,8 +245,29 @@
     cues: '[data-process-target]'
   });
 
+  var controllersReady = Boolean(
+    servicesController && servicesController.scene && servicesController.states.length &&
+    processController && processController.scene && processController.states.length
+  );
+
+  function shouldUseCinematicMode() {
+    return controllersReady && !reduceMotion && window.innerWidth > 1024 && window.innerHeight >= 720;
+  }
+
+  function syncPresentationMode() {
+    var useCinematic = shouldUseCinematicMode();
+    root.classList.toggle('cinematic-ready', useCinematic);
+
+    if (!useCinematic) {
+      if (hero) hero.classList.remove('is-handoff', 'is-exiting');
+      servicesController.settle();
+      processController.settle();
+      setupNaturalReveals();
+    }
+  }
+
   function updateHero() {
-    if (!hero || reduceMotion || window.innerWidth <= 1024) return;
+    if (!hero || !isCinematicMode()) return;
     var rect = hero.getBoundingClientRect();
     var distance = Math.max(hero.offsetHeight - window.innerHeight, 1);
     var progress = clamp(-rect.top / distance, 0, 1);
@@ -270,7 +291,6 @@
     }
 
     updateHero();
-    if (!localReviewMode && situationController) situationController.updateFromScroll();
     if (!localReviewMode && servicesController) servicesController.updateFromScroll();
     if (!localReviewMode && processController) processController.updateFromScroll();
     updateVisibility();
@@ -283,13 +303,14 @@
   }
 
   function setupNaturalReveals() {
-    if (reduceMotion || window.innerWidth > 1024) return;
-    var revealItems = toArray(document.querySelectorAll('.situation-state, .service-state, .process-state'));
+    if (naturalRevealsInitialized || isCinematicMode()) return;
+    naturalRevealsInitialized = true;
+    var revealItems = toArray(document.querySelectorAll('.service-state, .process-state'));
     if (!revealItems.length) return;
 
     revealItems.forEach(function (item) { item.classList.add('natural-reveal'); });
 
-    if (!('IntersectionObserver' in window)) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
       revealItems.forEach(function (item) { item.classList.add('is-revealed'); });
       return;
     }
@@ -301,6 +322,30 @@
         observer.unobserve(entry.target);
       });
     }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+
+    revealItems.forEach(function (item) { observer.observe(item); });
+  }
+
+  function setupEditorialReveals() {
+    if (editorialRevealsInitialized) return;
+    editorialRevealsInitialized = true;
+    var revealItems = toArray(document.querySelectorAll('.situation-point, .situation-outcome'));
+    if (!revealItems.length) return;
+
+    revealItems.forEach(function (item) { item.classList.add('editorial-reveal'); });
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach(function (item) { item.classList.add('is-revealed'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .16, rootMargin: '0px 0px -6% 0px' });
 
     revealItems.forEach(function (item) { observer.observe(item); });
   }
@@ -318,14 +363,18 @@
   });
 
   window.addEventListener('scroll', requestMotionUpdate, { passive: true });
-  window.addEventListener('resize', requestMotionUpdate);
+  window.addEventListener('resize', function () {
+    syncPresentationMode();
+    requestMotionUpdate();
+  });
 
   if (motionQuery && motionQuery.addEventListener) {
     motionQuery.addEventListener('change', function (event) {
       reduceMotion = event.matches;
       root.classList.toggle('reduced-motion', reduceMotion);
+      syncPresentationMode();
       if (reduceMotion) {
-        toArray(document.querySelectorAll('.natural-reveal')).forEach(function (item) { item.classList.add('is-revealed'); });
+        toArray(document.querySelectorAll('.natural-reveal, .editorial-reveal')).forEach(function (item) { item.classList.add('is-revealed'); });
       }
       requestMotionUpdate();
     });
@@ -340,7 +389,6 @@
   }
 
   if (localReviewMode) {
-    if (reviewParams.has('situation')) situationController.goTo(Number(reviewParams.get('situation')), true);
     if (reviewParams.has('service')) servicesController.goTo(Number(reviewParams.get('service')), true);
     if (reviewParams.has('process')) processController.goTo(Number(reviewParams.get('process')), true);
     window.requestAnimationFrame(function () {
@@ -351,6 +399,9 @@
     });
   }
 
+  if (controllersReady) root.classList.add('motion-ready');
+  syncPresentationMode();
+  setupEditorialReveals();
   setupNaturalReveals();
 
   window.requestAnimationFrame(function () {
@@ -361,7 +412,6 @@
   });
 
   window.__srgShortFunnel = {
-    situation: situationController,
     services: servicesController,
     process: processController,
     update: updateMotion
