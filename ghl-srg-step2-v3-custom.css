@@ -1,0 +1,106 @@
+/*
+ * SRG Step 2 V3 - paste-ready GoHighLevel Custom CSS
+ * Target form ID: AU21lU4ZE6oG9Ia9taW0
+ * This file is a handoff artifact only. It is not automatically applied by the website.
+ */
+
+body { margin: 0 !important; background: #ffffff !important; }
+
+#_builder-form {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 4px 18px !important;
+  color: #253642 !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+#_builder-form .form-builder--item { margin-bottom: 16px !important; }
+
+#_builder-form label {
+  margin-bottom: 7px !important;
+  color: #102f44 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .02em !important;
+}
+
+#_builder-form input,
+#_builder-form select,
+#_builder-form textarea,
+#_builder-form .multiselect__tags,
+#_builder-form .multiselect__single {
+  width: 100% !important;
+  min-height: 50px !important;
+  padding: 12px 14px !important;
+  color: #253642 !important;
+  background: #f7fafc !important;
+  border: 1px solid #c7dce6 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  outline: none !important;
+}
+
+#_builder-form textarea { min-height: 116px !important; resize: vertical !important; }
+
+#_builder-form input:focus,
+#_builder-form select:focus,
+#_builder-form textarea:focus,
+#_builder-form .multiselect__tags:focus-within {
+  background: #ffffff !important;
+  border-color: #c9a227 !important;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, .16) !important;
+}
+
+#_builder-form input::placeholder,
+#_builder-form textarea::placeholder { color: #788b96 !important; opacity: 1 !important; }
+
+#_builder-form input[type="checkbox"],
+#_builder-form input[type="radio"] {
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  width: 18px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  min-height: 18px !important;
+  margin: 2px 10px 0 0 !important;
+  padding: 0 !important;
+  accent-color: #c9a227 !important;
+}
+
+#_builder-form button:not([type="submit"]) {
+  color: #173f5b !important;
+  background: #eef6f9 !important;
+  border: 1px solid #c7dce6 !important;
+  box-shadow: none !important;
+}
+
+#_builder-form button[type="submit"],
+#_builder-form .form-builder--btn-submit {
+  width: 100% !important;
+  min-height: 58px !important;
+  margin-top: 12px !important;
+  color: #091f2d !important;
+  background: #c9a227 !important;
+  border: 1px solid #c9a227 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 16px 34px rgba(16, 47, 68, .18) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+#_builder-form button[type="submit"]:hover,
+#_builder-form .form-builder--btn-submit:hover { background: #b58d18 !important; border-color: #b58d18 !important; }
+
+#_builder-form button[type="submit"] *,
+#_builder-form .form-builder--btn-submit * { color: #091f2d !important; font-weight: 800 !important; }
+
+#_builder-form a { color: #173f5b !important; font-weight: 800 !important; }
+
+@media (max-width: 640px) {
+  #_builder-form { padding-inline: 0 !important; }
+}

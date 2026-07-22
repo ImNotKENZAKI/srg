@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">US Tax Returns and Compliance</title>
+  <desc id="desc">A compliance document with a completed check mark.</desc>
+  <g fill="none" stroke="#173F5B" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <path d="M17 9h23l8 8v38H17z"/>
+    <path d="M40 9v9h8M25 25h15M25 32h10M25 39h8"/>
+    <path d="m34 45 4 4 8-9"/>
+  </g>
+  <circle cx="46" cy="40" r="3" fill="#C9A227"/>
+</svg>

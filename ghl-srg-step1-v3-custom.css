@@ -1,0 +1,171 @@
+/*
+ * SRG Step 1 V3 - paste-ready GoHighLevel Custom CSS
+ * Target form ID: l0RxE6mTYuBdDQD23Rrd
+ * This file is a handoff artifact only. It is not automatically applied by the website.
+ */
+
+body { margin: 0 !important; background: #ffffff !important; }
+
+#_builder-form {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 2px 8px !important;
+  color: #253642 !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+#_builder-form .srg-intake-header,
+#_builder-form [class*="srg-intake-header"] {
+  display: none !important;
+}
+
+#_builder-form h1,
+#_builder-form h2,
+#_builder-form h3 {
+  margin-top: 0 !important;
+}
+
+#_builder-form .form-builder--item { margin-bottom: 10px !important; }
+
+#_builder-form label {
+  margin-bottom: 5px !important;
+  color: #102f44 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  letter-spacing: .03em !important;
+}
+
+#_builder-form input,
+#_builder-form select,
+#_builder-form textarea,
+#_builder-form .multiselect__tags,
+#_builder-form .multiselect__single {
+  width: 100% !important;
+  min-height: 46px !important;
+  padding: 10px 12px !important;
+  color: #253642 !important;
+  background: #f7fafc !important;
+  border: 1px solid #c7dce6 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+  outline: none !important;
+}
+
+#_builder-form textarea { min-height: 88px !important; resize: vertical !important; }
+
+#_builder-form input:focus,
+#_builder-form select:focus,
+#_builder-form textarea:focus,
+#_builder-form .multiselect__tags:focus-within {
+  background: #ffffff !important;
+  border-color: #c9a227 !important;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, .16) !important;
+}
+
+#_builder-form input::placeholder,
+#_builder-form textarea::placeholder { color: #788b96 !important; opacity: 1 !important; }
+
+#_builder-form input[type="checkbox"] {
+  appearance: checkbox !important;
+  -webkit-appearance: checkbox !important;
+  width: 18px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  min-height: 18px !important;
+  margin: 2px 10px 0 0 !important;
+  padding: 0 !important;
+  accent-color: #c9a227 !important;
+}
+
+#_builder-form .checkbox-label,
+#_builder-form .checkbox-label p,
+#_builder-form .terms-and-conditions,
+#_builder-form .terms-and-conditions p,
+#_builder-form .srg-consent-note,
+#_builder-form .srg-form-disclaimer,
+#_builder-form .srg-form-disclaimer p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  color: #536974 !important;
+  font-size: 11px !important;
+  line-height: 1.45 !important;
+}
+
+#_builder-form .checkbox-label {
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+#_builder-form button[type="submit"],
+#_builder-form .form-builder--btn-submit {
+  width: 100% !important;
+  min-height: 52px !important;
+  margin-top: 8px !important;
+  color: #091f2d !important;
+  background: #c9a227 !important;
+  border: 1px solid #c9a227 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 12px 26px rgba(16, 47, 68, .16) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+#_builder-form button[type="submit"]:hover,
+#_builder-form .form-builder--btn-submit:hover { background: #b58d18 !important; border-color: #b58d18 !important; }
+
+#_builder-form button[type="submit"]:focus-visible,
+#_builder-form .form-builder--btn-submit:focus-visible,
+#_builder-form a:focus-visible {
+  outline: 3px solid #c9a227 !important;
+  outline-offset: 3px !important;
+}
+
+#_builder-form button[type="submit"] *,
+#_builder-form .form-builder--btn-submit * { color: #091f2d !important; font-weight: 800 !important; }
+
+#_builder-form a { color: #173f5b !important; font-weight: 800 !important; }
+
+#_builder-form .privacy-policy,
+#_builder-form .privacy-policy p,
+#_builder-form .form-builder--item:has(a[href*="privacy"]) {
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+}
+
+#_builder-form .privacy-policy a,
+#_builder-form a[href*="privacy"] {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+#_builder-form .error,
+#_builder-form .error-message,
+#_builder-form .hl-error {
+  margin-top: 4px !important;
+  color: #7a5d10 !important;
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+}
+
+#_builder-form input[aria-invalid="true"],
+#_builder-form select[aria-invalid="true"],
+#_builder-form textarea[aria-invalid="true"] {
+  border-color: #b58d18 !important;
+}
+
+@media (max-width: 640px) {
+  #_builder-form { padding-inline: 0 !important; }
+}
