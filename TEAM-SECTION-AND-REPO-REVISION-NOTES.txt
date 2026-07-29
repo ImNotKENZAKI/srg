@@ -1,0 +1,132 @@
+SRG ADVISORS - FINAL PROCESS ALIGNMENT AND DEPLOYMENT NOTES
+Date: 2026-07-29
+Prepared for: Mary Digi Solutions / SRG Advisors
+
+1. OUTCOME
+
+The approved implementation received a final production pass focused on accurate
+application CTA language, visually lossless portrait delivery, responsive validation,
+and clean deployment packaging. The manual-review-first process remains unchanged.
+
+2. MODIFIED SOURCE FILES
+
+- strategy-consultation.html
+  - Corrected the header, hero, final, and mobile sticky application CTA labels.
+  - Kept every application CTA destination at #apply.
+  - Replaced six approved portrait PNG references with optimized WebP derivatives.
+  - Updated portrait intrinsic dimensions from 1122 x 1402 to 960 x 1200.
+
+- README-FIRST.txt
+  - Updated production upload and two-archive guidance.
+
+- images/generated/team/*.webp
+  - Added four high-quality 960 x 1200 production derivatives.
+
+- TEAM-SECTION-AND-REPO-REVISION-NOTES.txt
+  - Updated this implementation and validation record.
+
+No CSS or JavaScript file was modified during this pass.
+
+3. CTA PROCESS ALIGNMENT
+
+- Header primary CTA: Start My Private Strategy Review
+- Hero primary CTA: Start My Private Strategy Review
+- Final CTA: Start My Private Strategy Review
+- Mobile sticky primary CTA: Start My Review
+
+All four links still point to #apply. The application page contains no link to a
+calendar or booking route. SRG must still manually review each application before
+releasing any appropriate booking instructions.
+
+4. PRODUCTION PORTRAITS
+
+- images/generated/team/jay-guttmann-executive-portrait.webp
+- images/generated/team/leon-schenker-executive-portrait.webp
+- images/generated/team/joshua-goldstein-executive-portrait.webp
+- images/generated/team/heather-fineman-executive-portrait.webp
+
+Each derivative is 960 x 1200 and retains the source aspect ratio, crop, color,
+composition, and facial likeness. The files were created at WebP quality 94 with a
+high-quality Lanczos downsample. Comparison against the equivalently resized PNG
+masters measured 43.20-43.87 dB PSNR and showed no visible degradation.
+
+The four production WebPs total 682,352 bytes. The four original PNGs total about
+8.04 MB and remain byte-for-byte unchanged in the Source Masters Archive ZIP.
+
+5. PRODUCTION GITHUB-READY PACKAGE
+
+Filename: SRG-Production-GitHub-Ready-2026-07-29.zip
+
+The production package contains:
+- All required root HTML routes and sitemap-funnel.xml
+- css/ and js/
+- GoHighLevel custom form CSS files
+- videos/srg-hero-cpa-loop.mp4
+- Assets referenced by the packaged HTML and CSS
+- README-FIRST.txt, AGENTS.md, and these revision notes
+
+The production package excludes:
+- source-images/
+- The four original approved PNG portrait masters
+- Unreferenced legacy and archival media
+- Comparison sheets, QA artifacts, and prior ZIP files
+
+strategy-consultation.html is located directly at the production ZIP root.
+
+6. SOURCE MASTERS ARCHIVE
+
+Filename: SRG-Source-Masters-Archive-2026-07-29.zip
+
+This separate archive preserves:
+- source-images/ and its approved source-master folders
+- The four original approved PNG portraits under images/generated/team/
+- Every other image excluded from the dependency-based production package
+- SOURCE-MASTERS-ARCHIVE-MANIFEST.txt with the original relative paths
+
+This archive is for editing and preservation only. It should not be deployed.
+
+7. RESPONSIVE VALIDATION
+
+- 1440px: zero horizontal overflow; four team cards at 349px; portraits loaded.
+- 1280px: zero horizontal overflow; four team cards at 350px; portraits loaded.
+- 1024px: zero horizontal overflow; four team cards at 288px; portraits loaded.
+- 768px: zero horizontal overflow; four team cards at 390px; portraits loaded.
+- 390px: zero horizontal overflow; four team cards at 186px; portraits loaded.
+
+All six portrait placements rendered from the optimized WebPs at every required
+width. Their decoded natural dimensions were verified as 960 x 1200.
+
+8. FORM, JAVASCRIPT, AND ROUTING SAFEGUARDS
+
+- Step 1 form ID remains l0RxE6mTYuBdDQD23Rrd.
+- Step 2 form ID remains AU21lU4ZE6oG9Ia9taW0.
+- All files under js/ are byte-for-byte unchanged from the supplied source.
+- No form markup, redirect, qualification rule, workflow, or JavaScript changed.
+- No calendar or booking link is exposed from strategy-consultation.html.
+- Existing manually released booking route files remain present and untouched.
+
+9. STATIC AND VISUAL QA
+
+- Checked 85 local HTML/CSS asset and route references: zero missing files.
+- Confirmed all required CTA labels and unchanged #apply destinations.
+- Confirmed all four WebPs load and the four PNG masters are absent from production.
+- Confirmed archived PNG hashes match the approved source PNG hashes.
+- Confirmed the production package has no source-images directory.
+- Reviewed side-by-side PNG/WebP comparisons and five responsive screenshots.
+
+10. SCREENSHOTS
+
+- srg-production-1440-team.png
+- srg-production-1280-team.png
+- srg-production-1024-team.png
+- srg-production-768-team.png
+- srg-production-390-team.png
+- srg-production-1440-cta.png
+- srg-production-final-cta.png
+- srg-production-390-cta.png
+
+11. DEPLOYMENT
+
+Extract SRG-Production-GitHub-Ready-2026-07-29.zip and upload its contents directly
+to the intended repository root. Do not upload the parent extraction folder, the ZIP
+itself, or the separate Source Masters Archive ZIP.
