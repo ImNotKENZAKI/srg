@@ -1,0 +1,40 @@
+SRG ADVISORS — GENERATED TEAM IMAGE MAP
+Release: 2026-07-29
+
+DIRECTORY
+images/generated/team/
+
+FILES AND USAGE
+1. jay-guttmann-executive-portrait.webp
+   Person: Jay H. Guttmann, CPA, Partner
+   Used in: strategy-consultation.html
+   Usage: testimonial/advisor portrait and SRG team card
+
+2. leon-schenker-executive-portrait.webp
+   Person: Leon Schenker, CPA, Partner
+   Used in: strategy-consultation.html
+   Usage: SRG team card
+
+3. joshua-goldstein-executive-portrait.webp
+   Person: Joshua Goldstein, CPA, Tax Partner
+   Used in: strategy-consultation.html
+   Usage: SRG team card
+
+4. heather-fineman-executive-portrait.webp
+   Person: Heather Fineman, CPA
+   Used in: strategy-consultation.html
+   Usage: SRG team card
+
+TECHNICAL FORMAT
+- Format: WebP
+- Master dimensions: 800 × 1000 pixels
+- Aspect ratio: 4:5
+- Loading: lazy loading and asynchronous decoding for team cards
+- Presentation: standardized blue-gray office background and professional business styling
+
+CODE FILES UPDATED FOR THIS RELEASE
+- strategy-consultation.html
+- css/funnel.css
+
+IMPORTANT
+These portraits are client-review assets. Keep the filenames and directory paths unchanged unless the corresponding HTML paths are also updated.

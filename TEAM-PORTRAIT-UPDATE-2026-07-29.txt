@@ -1,0 +1,12 @@
+SRG TEAM PORTRAIT UPDATE — 2026-07-29
+
+Completed:
+- Removed Milton from the active strategy consultation team section.
+- Added Heather Fineman.
+- Added Joshua Goldstein.
+- Updated Jay H. Guttmann and Leon Schenker portraits.
+- Standardized all four portraits to a coordinated 4:5 visual system.
+- Added explicit image dimensions, accessible alt text, lazy loading, and async decoding.
+- Validated desktop and mobile team-section rendering.
+
+No form, GoHighLevel workflow, qualification logic, calendar routing, or sensitive-document process was changed in this portrait update.
