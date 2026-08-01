@@ -1,0 +1,78 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tax-advisory-review.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tax-advisory-review",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/strategy-consultation.html",
+      "destination": "/strategy",
+      "permanent": true
+    },
+    {
+      "source": "/strategy-consultation",
+      "destination": "/strategy",
+      "permanent": true
+    },
+    {
+      "source": "/private-strategy-review.html",
+      "destination": "/review",
+      "permanent": true
+    },
+    {
+      "source": "/private-strategy-review",
+      "destination": "/review",
+      "permanent": true
+    },
+    {
+      "source": "/strategy-consultation-thank-you.html",
+      "destination": "/thanks",
+      "permanent": true
+    },
+    {
+      "source": "/strategy-consultation-thank-you",
+      "destination": "/thanks",
+      "permanent": true
+    },
+    {
+      "source": "/strategy-consultation-qualified-booking.html",
+      "destination": "/book",
+      "permanent": true
+    },
+    {
+      "source": "/strategy-consultation-qualified-booking",
+      "destination": "/book",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/tax-advisory-review.html"
+    },
+    {
+      "source": "/strategy",
+      "destination": "/strategy-consultation.html"
+    },
+    {
+      "source": "/review",
+      "destination": "/private-strategy-review.html"
+    },
+    {
+      "source": "/thanks",
+      "destination": "/strategy-consultation-thank-you.html"
+    },
+    {
+      "source": "/book",
+      "destination": "/strategy-consultation-qualified-booking.html"
+    }
+  ]
+}

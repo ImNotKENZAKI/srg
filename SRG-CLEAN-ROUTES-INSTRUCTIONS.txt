@@ -1,0 +1,21 @@
+SRG ADVISORS CLEAN ROUTES
+Date: 2026-08-01
+
+UPLOAD
+1. Extract this ZIP.
+2. Upload vercel.json directly to the ROOT of ImNotKENZAKI/srg.
+3. Do not put it inside another folder.
+4. Commit the upload and allow Vercel to redeploy.
+
+PUBLIC ROUTES
+/          -> Short funnel (tax-advisory-review.html)
+/strategy  -> Original long nurture landing page
+/review    -> Step 2 Private Strategy Review
+/thanks    -> Manual-review thank-you page
+/book      -> Private manually approved booking page
+
+SAFEGUARDS
+- Existing HTML files are not renamed or deleted.
+- Existing .html links redirect to the new clean paths.
+- GoHighLevel form IDs, fields, workflows, and qualification logic are unchanged.
+- The booking route is not exposed automatically and remains for manual approval only.
