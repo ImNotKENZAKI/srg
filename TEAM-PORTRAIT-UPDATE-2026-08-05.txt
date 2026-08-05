@@ -1,0 +1,9 @@
+SRG Jay portrait update applied on 2026-08-05
+
+Changes made:
+- Replaced team card portrait for Jay with updated blue-suit portrait using matched office-style background.
+- Added separate small square headshot for Jay for 48x48 circular placements.
+- Updated strategy-consultation.html image references:
+  * Private Review Intake -> images/generated/team/jay-guttmann-headshot-square.webp
+  * Trust strip -> images/generated/team/jay-guttmann-headshot-square.webp
+  * Real SRG Team card -> images/generated/team/jay-guttmann-executive-portrait.webp
