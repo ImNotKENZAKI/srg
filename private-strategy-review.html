@@ -10,7 +10,9 @@
   <link rel="canonical" href="https://review.srgadvisors.com/review">
   <meta name="theme-color" content="#102f44">
   <link rel="icon" href="images/favicon.png" type="image/png">
-  <link rel="preload" as="image" href="images/short-funnel/photos/05-jay-document-review-desk.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/generated/approved-slots/rv-01-step-2-review-mobile.webp" media="(max-width: 740px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/generated/approved-slots/rv-01-step-2-review-tablet.webp" media="(min-width: 741px) and (max-width: 980px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/generated/approved-slots/rv-01-step-2-review-og-1200x630.webp" media="(min-width: 981px)" fetchpriority="high">
   <link rel="stylesheet" href="css/private-strategy-review-v3.css">
 </head>
 <body>
@@ -26,7 +28,11 @@
   <main id="step-two-main">
     <section class="review-hero" aria-labelledby="review-title">
       <div class="review-hero__image" aria-hidden="true">
-        <img src="images/short-funnel/photos/05-jay-document-review-desk.webp" width="1448" height="1086" alt="" fetchpriority="high" decoding="async">
+        <picture style="display: contents">
+          <source media="(max-width: 740px)" srcset="images/generated/approved-slots/rv-01-step-2-review-mobile.webp">
+          <source media="(max-width: 980px)" srcset="images/generated/approved-slots/rv-01-step-2-review-tablet.webp">
+          <img src="images/generated/approved-slots/rv-01-step-2-review-og-1200x630.webp" width="1200" height="630" alt="" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <div class="review-hero__veil" aria-hidden="true"></div>
       <div class="review-shell review-layout">

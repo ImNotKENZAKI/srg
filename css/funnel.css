@@ -537,7 +537,7 @@ body.funnel-page {
   color: var(--srg-white);
   background:
     linear-gradient(90deg, rgba(9, 20, 30, 0.98), rgba(9, 20, 30, 0.9) 50%, rgba(9, 20, 30, 0.68)),
-    url("../images/generated/funnel-hero-cpa-concept-01.png") center right / cover no-repeat,
+    url("../images/generated/approved-slots/ln-01-long-nurture-hero-desktop.webp") center right / cover no-repeat,
     #132331;
 }
 
@@ -4347,7 +4347,7 @@ body.funnel-page {
   color: var(--srg-white);
   background:
     linear-gradient(90deg, rgba(5, 25, 37, 0.98) 0%, rgba(7, 31, 45, 0.94) 46%, rgba(7, 31, 45, 0.82) 100%),
-    url("../images/short-funnel/photos/05-jay-document-review-desk.webp") 68% center / cover no-repeat;
+    url("../images/generated/approved-slots/sf-04-final-form-cta-desktop.webp") 68% center / cover no-repeat;
   border-top: 1px solid rgba(201, 162, 39, 0.22);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -4448,7 +4448,7 @@ body.funnel-page {
     padding: 48px 0;
     background:
       linear-gradient(180deg, rgba(5, 25, 37, 0.98), rgba(7, 31, 45, 0.94)),
-      url("../images/short-funnel/photos/05-jay-document-review-desk.webp") 70% center / cover no-repeat;
+      url("../images/generated/approved-slots/sf-04-final-form-cta-mobile.webp") 70% center / cover no-repeat;
   }
 
   .funnel-page .funnel-section--apply .funnel-container {
@@ -4483,7 +4483,7 @@ body.funnel-page {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(5,25,37,.97), rgba(8,34,49,.82) 48%, rgba(8,34,49,.72)),
-    url("../images/short-funnel/photos/05-jay-document-review-desk.webp") 68% center / cover no-repeat;
+    url("../images/generated/approved-slots/sf-04-final-form-cta-desktop.webp") 68% center / cover no-repeat;
   opacity: .96;
 }
 .funnel-section--apply::after {

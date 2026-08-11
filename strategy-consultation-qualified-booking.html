@@ -15,13 +15,15 @@
   <meta property="og:url" content="https://review.srgadvisors.com/book">
   <meta property="og:site_name" content="SRG Advisors, LLC">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://review.srgadvisors.com/images/short-funnel/photos/03-jay-client-consultation-wide.webp">
+  <meta property="og:image" content="https://review.srgadvisors.com/images/generated/approved-slots/bk-01-approved-booking-og-1200x630.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Choose Your Private Consultation Time | SRG Advisors, LLC">
   <meta name="twitter:description" content="Use the private scheduling link provided by SRG Advisors to choose an available consultation time.">
-  <meta name="twitter:image" content="https://review.srgadvisors.com/images/short-funnel/photos/03-jay-client-consultation-wide.webp">
+  <meta name="twitter:image" content="https://review.srgadvisors.com/images/generated/approved-slots/bk-01-approved-booking-og-1200x630.webp">
   <link rel="icon" href="images/favicon.png" type="image/png">
-  <link rel="preload" as="image" href="images/short-funnel/photos/03-jay-client-consultation-wide.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/generated/approved-slots/bk-01-approved-booking-mobile.webp" media="(max-width: 740px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/generated/approved-slots/bk-01-approved-booking-tablet.webp" media="(min-width: 741px) and (max-width: 980px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/generated/approved-slots/bk-01-approved-booking-desktop.webp" media="(min-width: 981px)" fetchpriority="high">
   <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
   <link rel="stylesheet" href="css/qualified-booking-v2.css">
 </head>
@@ -42,7 +44,11 @@
   <main id="booking-main">
     <section class="booking-hero" aria-labelledby="booking-title">
       <div class="booking-hero__image" aria-hidden="true">
-        <img src="images/short-funnel/photos/03-jay-client-consultation-wide.webp" alt="" fetchpriority="high" decoding="async">
+        <picture style="display: contents">
+          <source media="(max-width: 740px)" srcset="images/generated/approved-slots/bk-01-approved-booking-mobile.webp">
+          <source media="(max-width: 980px)" srcset="images/generated/approved-slots/bk-01-approved-booking-tablet.webp">
+          <img src="images/generated/approved-slots/bk-01-approved-booking-desktop.webp" width="1600" height="900" alt="" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <div class="booking-hero__veil" aria-hidden="true"></div>
 
