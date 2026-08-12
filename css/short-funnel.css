@@ -209,7 +209,7 @@ button, a { font: inherit; }
   .short-hero, .story-scene { height: auto; min-height: 0; }
   .short-hero__stage, .story-stage { position: relative; top: auto; height: auto; min-height: 0; overflow: hidden; }
   .short-hero__stage { min-height: 820px; }
-  .short-hero__image img { object-position: 88% center; }
+  .short-hero__image img { object-position: 35% center; }
   .short-hero__copy { width: min(620px, 62vw); }
   .hero-handoff { display: none; }
   .situation-stage, .process-stage { padding: 110px 0 90px; }
