@@ -1728,6 +1728,15 @@ body.funnel-page {
   transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.funnel-advisor-cards .funnel-advisor-card--leon img {
+  object-fit: contain;
+  object-position: center top;
+  background: linear-gradient(180deg, #c4c3c9 0%, #aeb0b9 46%, #34364c 74%, #17192d 100%);
+  filter: none;
+  transform: scale(1.24);
+  transform-origin: center top;
+}
+
 .funnel-advisor-card__body {
   position: absolute;
   inset: auto 0 0;
@@ -1764,6 +1773,10 @@ body.funnel-page {
 
   .funnel-advisor-cards article:hover img {
     transform: scale(1.018);
+  }
+
+  .funnel-advisor-cards article.funnel-advisor-card--leon:hover img {
+    transform: scale(1.24);
   }
 }
 
