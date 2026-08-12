@@ -1739,16 +1739,19 @@ body.funnel-page {
 }
 
 .funnel-advisor-cards .funnel-advisor-card--leon img {
-  position: relative;
+  position: absolute;
+  inset: 0 auto 0 50%;
   z-index: 0;
+  width: auto;
+  max-width: none;
+  height: 100%;
   object-fit: contain;
   object-position: center top;
   background: transparent;
   filter: none;
-  transform: scale(1.24);
-  transform-origin: center top;
-  -webkit-mask-image: linear-gradient(90deg, transparent 14%, #000 25%, #000 75%, transparent 86%);
-  mask-image: linear-gradient(90deg, transparent 14%, #000 25%, #000 75%, transparent 86%);
+  transform: translateX(-50%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
 .funnel-advisor-card__body {
@@ -1790,7 +1793,7 @@ body.funnel-page {
   }
 
   .funnel-advisor-cards article.funnel-advisor-card--leon:hover img {
-    transform: scale(1.24);
+    transform: translateX(-50%);
   }
 }
 
