@@ -32,7 +32,7 @@
   <link rel="dns-prefetch" href="//link.msgsndr.com">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700,900&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  <link href="css/funnel.css?v=20260729-team-section-final" rel="stylesheet">
+  <link href="css/funnel.css?v=20260811-long-page-graphics-a7" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -151,7 +151,7 @@
   }
   </script>
 </head>
-<body class="funnel-page">
+<body class="funnel-page funnel-page--strategy">
   <header class="funnel-header">
     <div class="funnel-scroll-progress" aria-hidden="true"><span></span></div>
     <div class="funnel-container funnel-header__inner">
@@ -431,14 +431,21 @@
       </div>
     </section>
 
-    <section class="funnel-section">
+    <section class="funnel-section funnel-section--risk">
       <div class="funnel-container funnel-split">
-        <div>
+        <div class="funnel-risk-intro">
           <p class="funnel-eyebrow">The Risk</p>
           <h2>Complex financial situations can create planning gaps when they are reviewed too late.</h2>
           <p>
             Many high-value taxpayers only revisit their structure during tax filing season. By then, some decisions may already be locked in, documentation may be incomplete, and planning windows may be narrower.
           </p>
+          <figure class="funnel-risk-visual">
+            <img src="images/generated/long-page/review-context-system-v1.webp" width="1680" height="945" loading="lazy" decoding="async" alt="Organized financial records, an entity structure diagram, property context, and timing materials prepared for CPA review">
+            <figcaption>
+              <span>Review context</span>
+              <strong>Structure, records, property, and timing considered together.</strong>
+            </figcaption>
+          </figure>
         </div>
         <div class="funnel-risk-list">
           <div>
@@ -461,14 +468,71 @@
       </div>
     </section>
 
-    <section class="funnel-section funnel-section--slate">
+    <section class="funnel-section funnel-section--slate funnel-section--advisory-positioning" id="review-method">
       <div class="funnel-container funnel-split funnel-split--reverse">
-        <div class="funnel-image-panel">
-          <picture style="display: contents">
-            <source media="(max-width: 740px)" srcset="images/generated/approved-slots/ln-03-advisory-review-mobile.webp">
-            <source media="(max-width: 980px)" srcset="images/generated/approved-slots/ln-03-advisory-review-tablet.webp">
-            <img src="images/generated/approved-slots/ln-03-advisory-review-desktop.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Jay Guttmann reviewing an advisory plan in a professional office">
-          </picture>
+        <div class="funnel-review-map" aria-label="What SRG reviews before recommending a next step">
+          <div class="funnel-review-map__head">
+            <p class="funnel-eyebrow">What SRG Reviews</p>
+            <h3>Connected facts, reviewed together.</h3>
+            <p>One decision becomes clearer when the surrounding facts are reviewed as one picture.</p>
+          </div>
+          <div class="funnel-review-orbit">
+            <figure class="funnel-review-orbit__image">
+              <img src="images/generated/long-page/jay-document-review-approved-v1.webp" width="1680" height="945" loading="lazy" decoding="async" alt="Jay Guttmann carefully reviewing organized financial documents and entity information at his desk">
+              <figcaption>
+                <span>CPA-led review</span>
+                <strong>One coordinated financial picture</strong>
+              </figcaption>
+            </figure>
+            <ol class="funnel-review-map__items">
+              <li class="funnel-review-node funnel-review-node--structure">
+                <span class="funnel-review-node__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M4 20V8l8-4 8 4v12M8 11h2m4 0h2M8 15h2m4 0h2M3 20h18"/></svg>
+                </span>
+                <div>
+                  <strong>Structure</strong>
+                  <span>Entity + ownership</span>
+                </div>
+              </li>
+              <li class="funnel-review-node funnel-review-node--exposure">
+                <span class="funnel-review-node__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3v18M5 7h14M7 7l-3 6h6L7 7Zm10 0-3 6h6l-3-6ZM8 21h8"/></svg>
+                </span>
+                <div>
+                  <strong>Tax exposure</strong>
+                  <span>Federal + state</span>
+                </div>
+              </li>
+              <li class="funnel-review-node funnel-review-node--records">
+                <span class="funnel-review-node__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h5M9 12h6m-6 4h6"/></svg>
+                </span>
+                <div>
+                  <strong>Records</strong>
+                  <span>Returns + basis</span>
+                </div>
+              </li>
+              <li class="funnel-review-node funnel-review-node--decision">
+                <span class="funnel-review-node__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M5 19 19 5m0 0h-7m7 0v7M5 5v14h14"/></svg>
+                </span>
+                <div>
+                  <strong>Decision</strong>
+                  <span>Timing + next move</span>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="funnel-review-map__output">
+            <span>Review output</span>
+            <div>
+              <strong>Gaps surfaced</strong>
+              <i aria-hidden="true">&#8594;</i>
+              <strong>Questions focused</strong>
+              <i aria-hidden="true">&#8594;</i>
+              <strong>Next step clarified</strong>
+            </div>
+          </div>
         </div>
         <div>
           <p class="funnel-eyebrow">SRG Advisory Positioning</p>
@@ -494,32 +558,66 @@
       </div>
     </section>
 
-    <section class="funnel-section funnel-section--media">
+    <section class="funnel-section funnel-section--media funnel-section--review-approach" id="review-standard">
       <div class="funnel-container funnel-video-grid">
         <div>
-          <p class="funnel-eyebrow">Intro Video</p>
-          <h2>A short SRG introduction can make the review process feel more personal.</h2>
+          <p class="funnel-eyebrow">CPA-Led Review Approach</p>
+          <h2>A clear review process before any next step is recommended.</h2>
           <p>
-            Once added, the video should explain who the review is for, what SRG may look at, and what qualified prospects should expect after applying.
+            SRG begins with the facts, the timing, and the decision in front of you. The team then determines whether further tax-planning or advisory review is appropriate.
           </p>
           <ul class="funnel-checklist funnel-checklist--compact">
-            <li>Who the review is designed for</li>
-            <li>What SRG looks at before scheduling</li>
-            <li>Why submitting the form does not create a CPA-client relationship</li>
+            <li>Business, entity, ownership, and income context</li>
+            <li>Relevant real estate, estate, trust, or investment considerations</li>
+            <li>Timing, documentation, and the financial decision ahead</li>
           </ul>
         </div>
-        <div class="funnel-media-card" aria-label="Intro video placeholder">
-          <picture style="display: contents">
-            <source media="(max-width: 740px)" srcset="images/generated/approved-slots/ln-04-media-consultation-mobile.webp">
-            <source media="(max-width: 980px)" srcset="images/generated/approved-slots/ln-04-media-consultation-tablet.webp">
-            <img src="images/generated/approved-slots/ln-04-media-consultation-desktop.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Jay Guttmann in a professional CPA advisory consultation setting">
-          </picture>
-          <div class="funnel-media-card__overlay">
-            <div class="funnel-play">&#9658;</div>
-            <strong>Jay/SRG Intro Video</strong>
-            <span>A short overview can be added here when the final video is ready.</span>
+        <aside class="funnel-review-standard" aria-labelledby="review-standard-title">
+          <div class="funnel-review-standard__head">
+            <div>
+              <p class="funnel-eyebrow">Review Standard</p>
+              <h3 id="review-standard-title">Professional judgment, not an instant answer.</h3>
+            </div>
+            <span class="funnel-review-standard__badge">Manual review first</span>
           </div>
-        </div>
+          <div class="funnel-review-standard__body">
+            <figure class="funnel-review-standard__image">
+              <img src="images/generated/long-page/jay-advisory-conversation-approved-v1.webp" width="1680" height="945" loading="lazy" decoding="async" alt="Jay Guttmann listening to a business owner during a private advisory conversation">
+              <figcaption>
+                <span>Advisory conversation</span>
+                <strong>Context first. Professional judgment next.</strong>
+              </figcaption>
+            </figure>
+            <div class="funnel-review-standard__flow">
+              <article>
+                <span class="funnel-review-standard__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h16v14H4V5Zm4 4h8m-8 4h5"/></svg>
+                </span>
+                <strong>Facts reviewed</strong>
+                <p>Context before options.</p>
+              </article>
+              <article>
+                <span class="funnel-review-standard__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3 5 6v5c0 4.5 2.8 8 7 10 4.2-2 7-5.5 7-10V6l-7-3Zm-3 9 2 2 4-5"/></svg>
+                </span>
+                <strong>Secure follow-up</strong>
+                <p>Protected document path.</p>
+              </article>
+              <article>
+                <span class="funnel-review-standard__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h13m-5-5 5 5-5 5M5 5v14"/></svg>
+                </span>
+                <strong>Right next step</strong>
+                <p>No automatic booking.</p>
+              </article>
+            </div>
+          </div>
+          <div class="funnel-review-standard__footer">
+            <span>CPA-led</span>
+            <span>Secure when needed</span>
+            <span>Qualification first</span>
+          </div>
+        </aside>
       </div>
     </section>
 
