@@ -376,3 +376,174 @@ html:not(.cinematic-ready) .process-compliance { position: relative; bottom: aut
   html:not(.cinematic-ready) .service-photo { z-index: 3; height: 430px; grid-column: 2; grid-row: 1; }
   html:not(.cinematic-ready) .service-copy { z-index: 4; grid-column: 1; grid-row: 1; }
 }
+
+/* ==========================================================================
+   2026-08-13 SRG partner visibility strip
+   Reuses approved portraits; no sharpening, filters, or AI restyling.
+   ========================================================================== */
+.short-team-scene {
+  position: relative;
+  padding: clamp(70px, 8vw, 108px) 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(31, 132, 220, 0.1), transparent 30%),
+    linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+  border-top: 1px solid rgba(16, 47, 68, 0.08);
+  border-bottom: 1px solid rgba(16, 47, 68, 0.08);
+}
+.short-team-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(30px, 5vw, 72px);
+  align-items: center;
+}
+
+.short-team-copy {
+  max-width: 520px;
+}
+
+.short-team-copy h2 {
+  margin: 10px 0 18px;
+  color: #102f44;
+  font-size: clamp(38px, 4.2vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.short-team-copy > p:last-child {
+  margin: 0;
+  color: #627584;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.short-team-feature {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 47, 68, 0.1);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 4%, rgba(31, 132, 220, 0.12), transparent 42%),
+    linear-gradient(180deg, #eef5fa 0%, #ffffff 82%);
+  box-shadow: 0 24px 56px rgba(16, 47, 68, 0.13);
+}
+
+.short-team-feature__visual {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  min-height: 390px;
+  padding: 22px 22px 0;
+  overflow: hidden;
+}
+
+.short-team-feature__visual::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 30%;
+  background: linear-gradient(180deg, transparent, rgba(238, 245, 250, 0.76));
+  content: "";
+  pointer-events: none;
+}
+
+.short-team-feature__visual img {
+  position: relative;
+  z-index: 0;
+  width: min(100%, 760px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.short-team-links {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border-top: 1px solid rgba(16, 47, 68, 0.09);
+  background: rgba(16, 47, 68, 0.08);
+}
+
+.short-team-links a {
+  min-width: 0;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #102f44;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.short-team-links a:hover {
+  background: #f5faff;
+  color: #1677c9;
+}
+
+.short-team-links a:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid #3190e7;
+  outline-offset: -3px;
+}
+
+.short-team-links strong,
+.short-team-links span {
+  display: block;
+}
+
+.short-team-links strong {
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.short-team-links span {
+  margin-top: 3px;
+  color: #6b7d89;
+  font-size: 11px;
+}
+
+@media (max-width: 980px) {
+  .short-team-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .short-team-copy {
+    max-width: 700px;
+  }
+
+  .short-team-feature__visual {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+  .short-team-scene {
+    padding: 58px 0;
+  }
+
+  .short-team-feature {
+    border-radius: 18px;
+  }
+
+  .short-team-feature__visual {
+    min-height: 260px;
+    padding: 14px 8px 0;
+  }
+
+  .short-team-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .short-team-links a {
+    padding: 13px 12px;
+  }
+
+  .short-team-links strong {
+    font-size: 12px;
+  }
+}

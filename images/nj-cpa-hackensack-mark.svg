@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-labelledby="title description">
+  <title id="title">New Jersey CPA firm location mark</title>
+  <desc id="description">A branded New Jersey outline with a Hackensack location pin.</desc>
+  <defs>
+    <linearGradient id="panel" x1="20" y1="12" x2="220" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102f44"/>
+      <stop offset="1" stop-color="#173f5b"/>
+    </linearGradient>
+    <linearGradient id="state" x1="35" y1="18" x2="112" y2="123" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eef6f9"/>
+      <stop offset="1" stop-color="#dcecf4"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#071923" flood-opacity=".32"/>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="236" height="136" rx="24" fill="url(#panel)" stroke="#3190e7" stroke-opacity=".28" stroke-width="2"/>
+  <circle cx="62" cy="69" r="48" fill="#fff" fill-opacity=".06"/>
+  <path d="M65 17 79 22 82 31 78 42 84 51 79 62 81 71 75 82 72 95 62 108 58 123 46 120 45 109 52 99 55 88 51 77 55 67 51 56 57 45 58 33Z" fill="url(#state)" stroke="#fff" stroke-opacity=".7" stroke-width="2" filter="url(#shadow)"/>
+  <path d="M64 47c-8 0-14 6-14 14 0 11 14 25 14 25s14-14 14-25c0-8-6-14-14-14Z" fill="#c9a227" stroke="#fff" stroke-width="2"/>
+  <circle cx="64" cy="61" r="5" fill="#102f44"/>
+  <text x="107" y="57" fill="#fff" font-family="Arial, sans-serif" font-size="17" font-weight="800" letter-spacing=".3">NEW JERSEY</text>
+  <text x="108" y="82" fill="#8fd0ff" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4">HACKENSACK</text>
+  <path d="M112 98h93" stroke="#c9a227" stroke-width="3" stroke-linecap="round"/>
+  <text x="108" y="119" fill="#dcecf4" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing=".9">CPA ADVISORY FIRM</text>
+</svg>

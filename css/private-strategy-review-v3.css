@@ -133,3 +133,17 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
 }
+
+/* 2026-08-13 SRG team-neutral Step 2 visual */
+.review-hero__image img {
+  object-position: 62% center;
+  filter: saturate(.7) contrast(1.04) brightness(.62);
+}
+.review-hero__veil {
+  background:
+    linear-gradient(90deg, rgba(5,25,37,.99) 0%, rgba(7,31,45,.96) 43%, rgba(7,31,45,.66) 70%, rgba(5,25,37,.78) 100%),
+    linear-gradient(0deg, rgba(5,25,37,.93), transparent 58%);
+}
+@media (max-width: 720px) {
+  .review-hero__image img { object-position: 64% 44%; }
+}

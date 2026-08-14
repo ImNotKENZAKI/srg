@@ -1,7 +1,58 @@
 (function () {
-  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var motionPreference = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+  var reducedMotion = motionPreference && motionPreference.matches;
   var body = document.body;
   var progressBar = document.querySelector(".funnel-scroll-progress span");
+  var heroVideo = document.querySelector(".funnel-hero__video");
+  var mobileCtaQuietZones = document.querySelectorAll(
+    ".funnel-authority, .funnel-partner-interlude, #apply, .funnel-section--after-apply, .funnel-section--faq, .funnel-final-cta, .funnel-footer"
+  );
+
+  if (heroVideo) {
+    var revealHeroVideo = function () {
+      if (heroVideo.readyState < 2) {
+        return;
+      }
+
+      heroVideo.classList.add("funnel-hero__video--ready");
+      if (body) {
+        body.classList.add("funnel-hero-video-ready");
+      }
+    };
+
+    heroVideo.addEventListener("loadeddata", revealHeroVideo, { once: true });
+    heroVideo.addEventListener("canplay", revealHeroVideo, { once: true });
+    heroVideo.addEventListener("playing", revealHeroVideo, { once: true });
+
+    if (heroVideo.readyState >= 2) {
+      window.requestAnimationFrame(revealHeroVideo);
+    }
+  }
+
+  if (motionPreference && heroVideo) {
+    var syncHeroVideo = function (event) {
+      var shouldReduce = event ? event.matches : motionPreference.matches;
+
+      if (shouldReduce) {
+        heroVideo.pause();
+        return;
+      }
+
+      if (heroVideo.autoplay) {
+        var playRequest = heroVideo.play();
+        if (playRequest && typeof playRequest.catch === "function") {
+          playRequest.catch(function () {});
+        }
+      }
+    };
+
+    syncHeroVideo();
+    if (typeof motionPreference.addEventListener === "function") {
+      motionPreference.addEventListener("change", syncHeroVideo);
+    } else if (typeof motionPreference.addListener === "function") {
+      motionPreference.addListener(syncHeroVideo);
+    }
+  }
 
   if (!body || reducedMotion) {
     if (body) {
@@ -9,6 +60,12 @@
     }
     return;
   }
+
+  window.requestAnimationFrame(function () {
+    window.requestAnimationFrame(function () {
+      body.classList.add("srg-prototype-ready");
+    });
+  });
 
   var selectors = [
     ".funnel-section__intro",
@@ -18,6 +75,9 @@
     ".funnel-proof-grid article",
     ".funnel-authority__grid > *",
     ".funnel-advisor-cards article",
+    ".funnel-partner-interlude",
+    ".funnel-review-orbit",
+    ".funnel-review-map",
     ".funnel-card",
     ".funnel-decision-grid > *",
     ".funnel-decision-list > div",
@@ -71,7 +131,7 @@
       name: "right"
     },
     {
-      selector: ".funnel-card, .funnel-proof-grid article, .funnel-scope-grid article, .funnel-advisor-cards article, .funnel-testimonials figure, .funnel-process > div",
+      selector: ".funnel-card, .funnel-proof-grid article, .funnel-scope-grid article, .funnel-advisor-cards article, .funnel-partner-interlude, .funnel-testimonials figure, .funnel-process > div",
       name: "scale"
     },
     {
@@ -101,9 +161,14 @@
     var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     var progress = Math.min(1, Math.max(0, scrollTop / maxScroll));
     var mobileCtaThreshold = Math.max(280, window.innerHeight * 0.44);
+    var mobileCtaSuppressed = Array.prototype.some.call(mobileCtaQuietZones, function (zone) {
+      var bounds = zone.getBoundingClientRect();
+      return bounds.top < window.innerHeight - 90 && bounds.bottom > 110;
+    });
 
     body.classList.toggle("funnel-has-scrolled", scrollTop > 12);
-    body.classList.toggle("funnel-show-mobile-cta", scrollTop > mobileCtaThreshold);
+    body.classList.toggle("funnel-mobile-cta-suppressed", mobileCtaSuppressed);
+    body.classList.toggle("funnel-show-mobile-cta", scrollTop > mobileCtaThreshold && !mobileCtaSuppressed);
 
     if (progressBar) {
       progressBar.style.setProperty("--funnel-scroll-progress", progress.toFixed(4));
@@ -259,4 +324,122 @@
       formLoader.classList.add("funnel-form-loader--slow");
     }
   }, 8000);
+})();
+
+(function () {
+  var modal = document.querySelector("[data-bio-modal]");
+  var triggers = document.querySelectorAll("[data-bio-trigger]");
+
+  if (!modal || !triggers.length) {
+    return;
+  }
+
+  var dialog = modal.querySelector(".funnel-bio-modal__dialog");
+  var image = modal.querySelector("[data-bio-modal-image]");
+  var name = modal.querySelector("[data-bio-modal-name]");
+  var role = modal.querySelector("[data-bio-modal-role]");
+  var copy = modal.querySelector("[data-bio-modal-copy]");
+  var closeControls = modal.querySelectorAll("[data-bio-close]");
+  var lastTrigger = null;
+
+  var openModal = function (trigger) {
+    lastTrigger = trigger;
+
+    if (image) {
+      image.src = trigger.getAttribute("data-bio-image") || "";
+      image.alt = trigger.getAttribute("data-bio-alt") || "";
+    }
+
+    if (name) {
+      name.textContent = trigger.getAttribute("data-bio-name") || "SRG Advisors Partner";
+    }
+
+    if (role) {
+      role.textContent = trigger.getAttribute("data-bio-role") || "CPA, Partner";
+    }
+
+    if (copy) {
+      copy.textContent = trigger.getAttribute("data-bio-text") || "";
+    }
+
+    modal.hidden = false;
+    document.body.classList.add("funnel-bio-modal-open");
+
+    window.requestAnimationFrame(function () {
+      if (dialog) {
+        dialog.focus();
+      }
+    });
+  };
+
+  var closeModal = function () {
+    modal.hidden = true;
+    document.body.classList.remove("funnel-bio-modal-open");
+
+    if (lastTrigger && typeof lastTrigger.focus === "function") {
+      lastTrigger.focus();
+    }
+  };
+
+  Array.prototype.forEach.call(triggers, function (trigger) {
+    trigger.addEventListener("click", function () {
+      openModal(trigger);
+    });
+  });
+
+  var openBioFromHash = function () {
+    var hash = window.location.hash || "";
+    if (!/^#bio-(jay|leon|joshua|heather)$/.test(hash)) {
+      return;
+    }
+
+    var card = document.querySelector(hash);
+    var trigger = card ? card.querySelector("[data-bio-trigger]") : null;
+    if (!trigger) {
+      return;
+    }
+
+    window.setTimeout(function () {
+      openModal(trigger);
+    }, 120);
+  };
+
+  openBioFromHash();
+  window.addEventListener("hashchange", openBioFromHash);
+
+  Array.prototype.forEach.call(closeControls, function (control) {
+    control.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (modal.hidden) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeModal();
+      return;
+    }
+
+    if (event.key === "Tab" && dialog) {
+      var focusable = dialog.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) {
+        event.preventDefault();
+        dialog.focus();
+        return;
+      }
+
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === dialog)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
 })();

@@ -1,0 +1,97 @@
+SRG Advisors landing-page production revision
+Date: 2026-08-13
+
+Locked acquisition architecture
+- Short funnel remains intentionally Jay-led for personalized outreach and email campaigns.
+- Long funnel is now intentionally SRG-team-led for broader/general marketing traffic.
+- Step 2 remains firm/team-neutral and continues the same SRG Private Strategy Review process.
+- Thank-you page is now firm/team-led rather than Jay-led, so it works for either acquisition path.
+- Booking pages were intentionally left unchanged for the later booking/calendar-routing phase.
+
+Current visual/content changes
+- The original long-page hero video is restored with autoplay, muted, loop, playsinline, intrinsic dimensions, a poster fallback, and reduced-motion handling.
+- Long-page hero headline and supporting copy now position the review as led by the SRG advisory team.
+- The four partner cards remain the primary formal team presentation with accessible View Bio modals.
+- All four card crops use equal 960 x 1200 sources and consistent display geometry.
+- The review-method graphic was simplified into a larger collaborative team-review image with a cleaner 2x2 context grid.
+- The later review-standard visual now features Leon instead of another Jay-focused image.
+- Added a Partner Perspectives section featuring Joshua and Heather in distinct supporting roles, without implying that every application is personally reviewed by every partner.
+- Thank-you hero replaced the Jay-specific image with an SRG partner-team review image.
+- Step 2 hero replaced the Jay-specific image with an SRG team-review image.
+- Short-funnel hero/support copy now explicitly reflects Jay H. Guttmann, CPA, backed by the SRG team.
+- The fourth short-funnel service label now matches the approved IRS Tax Resolution & Disputes category.
+- Obsolete static-hero CSS and the unused static long-hero image were removed.
+- Legacy generated/test variants were removed after reference validation.
+
+Process controls preserved
+- Two-step intake remains intact.
+- Manual SRG review remains required before consultation scheduling.
+- No automatic calendar route was introduced.
+- Secure-document language remains intact.
+- Zoom-first consultation wording remains intact where already approved.
+- GHL Step 1 and Step 2 form IDs remain unchanged.
+- Approved-booking and legacy-booking pages/files remain unchanged in this revision.
+
+QA completed
+- Verified the primary landing experiences at 1440px desktop and the full route set at 1024px tablet and 390px mobile.
+- Confirmed no horizontal overflow on /, /strategy, /review, /thanks, /book, or /privacy.
+- Confirmed the restored 1600 x 686 MP4 plays muted and looped with its poster fallback available.
+- Confirmed all four partner modals open, close by button, ESC, and overlay, trap keyboard focus, and return focus to the trigger.
+- Confirmed Step 1, Step 2, and the private calendar load their expected GHL embeds.
+- Confirmed local assets, image dimensions, alt attributes, IDs, JavaScript syntax, Vercel JSON, sitemap XML, and internal references.
+
+External items for SRG / GHL review
+- The GHL forms currently redirect through the existing srg-review.vercel.app HTML URLs. Vercel redirects those URLs to the clean review and thank-you routes; changing the GHL destination to the branded domain is intentionally deferred.
+- Contact deduplication, qualification branches, notifications, and workflow outcomes remain GHL-managed and were not changed or live-submitted during this code audit.
+
+Long-page premium alignment and motion refinement
+- Replaced the plain NJ and TEAM trust-strip placeholders with a branded Hackensack/New Jersey mark and the approved four-partner team artwork.
+- Balanced all three trust indicators with equal visual frames, centered copy, matching heights, and concise supporting language.
+- Re-centered and tightened the partner-perspective section with shorter copy, equal cards, consistent image/text proportions, and improved heading rhythm.
+- Added restrained continuous blue/gold background atmosphere, image drift, portrait movement, card sheen, and text-accent motion while preserving reduced-motion fallbacks.
+- Expanded scroll-reveal coverage to partner-perspective and review-system components without changing the forms, qualification routing, or manual booking gate.
+
+Premium motion prototype checkpoint
+- Replaced the imperceptible 680ms hero fade with a staged line-mask headline reveal, followed by supporting copy, actions, proof cues, and the intake panel.
+- Added a continuous hero accent sweep, approximately 7px intake-panel float, and a slow video pan/zoom that remains perceptible after five seconds.
+- Upgraded the Partner Perspectives block into a navy editorial stage with animated heading lines, numbered partner cards, stronger image framing, and coordinated entrances.
+- Removed the hero button's mustard halo in favor of a restrained navy surface animation and controlled blue/gold highlights.
+- Verified normal browser motion preference, timed entry/one-second/five-second states, zero overflow at 1440px, 1024px, and 390px, and zero console errors.
+
+Premium partner and trust refinement
+- Replaced the Partner Perspectives images with the supplied seated Joshua and Heather portraits, optimized as WebP while preserving their original composition.
+- Removed the decorative 01/02 card numbers and replaced the animated template sheen with a restrained blue-to-gold editorial rule.
+- Reworked the trust strip into a left-aligned credential ribbon and replaced the floating team cutout with the real partner-review meeting image.
+- Simplified the Partner Perspectives background to a controlled deep-navy atmosphere without the template grid.
+- Smoothed global reveals, partner-card entrances, portrait drift, and credential movement while keeping reduced-motion fallbacks.
+
+2026-08-14 conversion and content consolidation
+- Moved the existing client feedback directly below the trust ribbon so verified proof appears earlier in the long-page journey.
+- Combined the audience and fit guidance, removed the repeated risk/review-standard blocks, and consolidated the review-first process under the post-application section.
+- Reduced the long nurture page from 20 to 15 major content sections without changing the Step 1 form, Step 2 form, manual review gate, or approved booking path.
+- Added mobile sticky-CTA quiet zones so the fixed action bar does not cover partner profiles, embedded forms, post-application guidance, FAQ content, final CTA content, or the footer.
+- Added a local, privacy-safe conversion event layer for page-stage views, CTA and phone clicks, partner-bio opens, and form visibility/engagement states.
+- The event layer queues non-PII events only; it does not install a vendor tag, send network requests, set cookies, read form values, or change GHL automations.
+
+2026-08-14 Leon partner perspective restoration
+- Restored Leon Schenker as a prominent visual presence inside the existing Partner Perspectives section without reintroducing the removed repetitive review-standard section.
+- Added a full-width editorial partner feature using the existing approved Leon advisory image, concise role-specific copy, and the verified accessible bio modal content.
+- Preserved the consolidated 15-section long-page structure, the two-step GHL intake, and the manual approval gate before booking.
+
+2026-08-14 video-only hero loading cleanup
+- Removed the preloaded legacy hero portrait, the video poster attribute, and the old photo-based hero background fallback from the video-backed long landing page.
+- The hero now opens on a clean navy atmospheric surface and fades in only the actual MP4 after the browser reports that video data is ready.
+- Changed video preload from metadata to auto to reduce the visible loading interval while retaining autoplay, muted, loop, playsinline, and reduced-motion behavior.
+- The short paid-traffic funnel and intentional partner/team imagery were not changed by this loading-state refinement.
+
+2026-08-14 distributed partner perspective redesign
+- Replaced the combined Partner Perspectives block with three separate editorial interludes placed beside the page topics most relevant to each partner.
+- Gave Joshua, Heather, and Leon the same dimensions, typography, dark-navy palette, portrait motion, bio treatment, and reveal behavior so no profile reads as more important than another.
+- Joshua now follows the client-fit discussion, Heather follows planning timing, and Leon follows the connected tax and advisory scope.
+- Preserved all verified partner bio content, accessibility controls, responsive behavior, reduced-motion fallbacks, and the manual approval gate before booking.
+
+2026-08-14 final four-partner and team-context refinement
+- Added Jay H. Guttmann as the fourth dedicated editorial interlude after the review-method discussion, using the same dimensions, typography, bio treatment, and visual weight as Joshua, Heather, and Leon.
+- Used only service areas already stated in Jay's verified partner bio and retained firm-level language so the page does not imply that one partner personally reviews every matter.
+- Added the approved four-partner review image as a cinematic background for the After You Apply section, where the content already explains SRG's manual team-review process.
+- Added staggered partner-copy and process-copy transitions, a restrained 30-second team-background drift, and reduced-motion fallbacks without changing the GHL form, intake path, or booking controls.

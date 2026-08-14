@@ -167,3 +167,17 @@ a { color: inherit; }
   .aftercare__inner { padding: 36px 0; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
+
+/* 2026-08-13 SRG team-led confirmation hero */
+.confirmation-hero__image {
+  object-position: 58% 48%;
+  filter: saturate(.72) contrast(1.04) brightness(.68);
+}
+.confirmation-hero__veil {
+  background:
+    linear-gradient(90deg, rgba(5,24,34,.99) 0%, rgba(5,24,34,.94) 43%, rgba(5,24,34,.42) 70%, rgba(5,24,34,.18) 100%),
+    linear-gradient(0deg, rgba(5,24,34,.96), transparent 52%);
+}
+@media (max-width: 720px) {
+  .confirmation-hero__image { object-position: 55% 45%; }
+}
