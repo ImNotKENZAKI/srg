@@ -1,0 +1,33 @@
+/* Animate composited surfaces only; release them outside the visible chapter. */
+.v7-page .service-ribbon[data-motion-in-view=false] .ribbon-track { animation-play-state:paused; }
+.v7-page .home-portfolio,.v7-page .home-review-lens { filter:none; }
+.v7-page .home-story[data-motion-in-view=true] :is(.home-document,.home-portfolio,.home-review-lens),
+.v7-page .service-story[data-motion-in-view=true] :is(.service-copy,.service-overview),
+.v7-page .industry-story[data-motion-in-view=true] :is(.heather-core,.gallery-cell,.industry-intro-copy),
+.v7-page .review-story[data-motion-in-view=true] :is(.dossier-sheet,.dossier-review-mark) { will-change:transform,opacity; }
+@media(prefers-reduced-motion:no-preference) {
+ .v7-page .service-story[data-mode=animated][data-motion-in-view=true] .service-copy[aria-hidden=false] .service-illustration { animation-duration:.22s; }
+}
+.v7-page .industry-story[data-gallery-mode=animated] .heather-core { transform-origin:0 0; border-radius:4px; }
+.v7-page .heather-core::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,#08291dd9,transparent 36%); pointer-events:none; }
+.v7-page .industry-story[data-gallery-mode=animated] .heather-core[data-gallery-compact=true] strong { font-size:11px; white-space:normal; }
+.v7-page .industry-story[data-gallery-mode=animated] .heather-core[data-gallery-compact=true] figcaption span { display:none; }
+.v7-page .industry-story .gallery-cell { box-shadow:none; }
+.v7-page .review-dossier .dossier-shadow { filter:none; background:transparent; }
+.v7-page .service-story[data-mode=static] .leon-signature,
+.v7-page .service-story .leon-signature { top:auto; right:auto; bottom:auto; }
+@media(prefers-reduced-motion:reduce) {
+ .v7-page [data-motion-in-view] * { will-change:auto!important; }
+}
+
+.v7-page .heather-core figcaption { display:none; }
+.v7-page .gallery-partner-caption { display:block; }
+.v7-page .gallery-partner-caption strong { display:block; color:var(--ink); font-size:14px; line-height:1.4; font-weight:600; }
+.v7-page .gallery-partner-caption small { display:block; color:var(--muted); font-size:12px; line-height:1.4; margin-top:3px; }
+.v7-page .gallery-context { gap:22px; align-items:center; }
+@media(max-width:600px) {
+ .v7-page .gallery-context { flex-direction:column; align-items:flex-start; gap:3px; }
+ .v7-page .gallery-context .gallery-photo-note { display:none; }
+ .v7-page .gallery-partner-caption strong { font-size:12px; }
+ .v7-page .gallery-partner-caption small { font-size:11px; max-width:120px; }
+}

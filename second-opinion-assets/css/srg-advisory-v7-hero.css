@@ -1,0 +1,62 @@
+/* Shared accents and the original second-look illustration. */
+body.v7-page,body.intake-v7 { --wine:#7e3443; --wine-light:#bd7e86; --wine-surface:#efe3e4; }
+.v7-page .site-header,.intake-v7 .site-header { border-top:3px solid var(--wine); }
+.v7-page .site-header nav a { position:relative; }
+.v7-page .site-header nav a[aria-current],.v7-page .site-header nav a:hover { color:var(--wine); }
+.v7-page .site-header nav a::after { content:''; position:absolute; left:0; right:0; bottom:-7px; height:2px; background:var(--wine); transform:scaleX(0); transform-origin:left; transition:transform .2s; }
+.v7-page .site-header nav a[aria-current]::after,.v7-page .site-header nav a:hover::after { transform:scaleX(1); }
+.v7-page .home-background>svg,.v7-page .hero-trust-portrait { display:none; }
+.v7-page .home-eyebrow { display:flex; align-items:center; gap:10px; font-size:10px; letter-spacing:.1em; }
+.v7-page .home-eyebrow::before { content:''; width:6px; height:6px; flex:none; border-radius:50%; }
+.v7-page .hero-advisor-figure { position:absolute; inset:0; margin:0; }
+.v7-page .portrait-mount { position:absolute; inset:0; width:100%; height:100%; max-width:none; aspect-ratio:auto; }
+.v7-page .portrait-photo { position:absolute; inset:0; border:0; box-shadow:none; }
+.v7-page .portrait-photo::after { content:''; position:absolute; inset:0; pointer-events:none; }
+.v7-page .home-person-caption { position:absolute; top:auto; left:auto; width:auto; margin:0; z-index:4; }
+.v7-page .home-person-caption strong { display:block; color:#fffaf0; font-size:17px; line-height:1.4; font-weight:600; }
+.v7-page .home-person-caption>span { display:block; color:#dae7df; font-size:11px; line-height:1.5; margin-top:4px; }
+.v7-page .perspective-dossier { position:absolute; left:var(--gutter); right:var(--gutter); bottom:54px; z-index:6; display:grid; grid-template-columns:1fr 2.2fr; align-items:center; gap:40px; padding:19px 0 0; border-top:1px solid #aec3b54d; color:#f5eddb; }
+.v7-page .perspective-dossier-heading { display:flex; align-items:center; gap:14px; font:italic 25px/1.2 var(--type-serif); color:#ebd4a3; }
+.v7-page .perspective-dossier-heading svg { display:block; width:42px; height:42px; flex:none; fill:none; stroke:#dda5ac; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.v7-page .perspective-review-path { position:relative; display:grid; grid-template-columns:1fr 1fr 1.25fr; gap:24px; padding-top:19px; }
+.v7-page .perspective-rule { position:absolute; top:0; left:0; right:0; height:1px; background:#9daf9c45; overflow:visible; }
+.v7-page .perspective-rule i { display:block; height:100%; background:linear-gradient(90deg,#b77b86,#dfc58b); transform-origin:left; }
+.v7-page .review-scan { position:absolute; top:-1px; left:0; width:16%; height:3px; background:linear-gradient(90deg,transparent,#f4d99a,transparent); opacity:0; }
+.v7-page .perspective-review-line { position:relative; display:flex; align-items:center; gap:12px; min-width:0; }
+.v7-page .perspective-review-line::before { content:''; position:absolute; top:-22px; left:0; width:7px; height:7px; border:1px solid #dfc58b; border-radius:50%; background:#102f29; }
+.v7-page .perspective-review-line svg { width:30px; height:30px; flex:none; fill:none; stroke:#ead3a0; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.v7-page .perspective-review-line span { min-width:0; font-size:12px; font-weight:500; line-height:1.45; white-space:normal; }
+.v7-page .perspective-review-line i { position:absolute; bottom:-7px; left:42px; width:30px; height:2px; background:#bd7e86; transform-origin:left; }
+.v7-page .home-progress i { background:linear-gradient(90deg,#7e3443,#ceb16c); }
+.v7-page .home-story[data-home-mode=pinned][data-motion-in-view=true] .perspective-rule i { will-change:transform; }
+.v7-page .service-ribbon { border-bottom:2px solid var(--wine); }
+.v7-page .service-ribbon .ribbon-group>span { color:#d9a8ad; }
+.v7-page .service-story .service-symbol { background:var(--wine-surface); color:var(--wine); border-color:#d6b8bf; }
+.v7-page .service-story .scene-picker button[aria-pressed=true] { border-color:var(--wine); }
+.v7-page .industry-directory { border-top:2px solid var(--wine); }
+.v7-page .industry-grid li svg { color:var(--wine); }
+.v7-page .gallery-cell::after { background:linear-gradient(0deg,#102f44e6,transparent 60%); }
+.v7-page .gallery-cell figcaption { border-left:2px solid #ceb16c; padding-left:9px; }
+.v7-page .industry-grid .industry-icon { background:#efe8da; padding:6px; width:40px; height:40px; border-radius:2px; }
+.v7-page .review-steps .process-symbol { border-color:#a08c57; background:#173f5b; color:#dfc58b; }
+.v7-page .gold-cta svg { transition:transform .22s ease; }
+.v7-page .gold-cta:hover svg { transform:translate3d(3px,-3px,0); }
+.v7-page .directory-topline::before { content:''; height:7px; width:7px; flex:none; border-radius:50%; background:var(--wine); }
+.intake-v7 .intake-intro .eyebrow { color:var(--wine); }
+@media(max-width:1100px) {
+ .v7-page .perspective-dossier { gap:22px; grid-template-columns:1fr 2.4fr; }
+ .v7-page .perspective-dossier-heading { font-size:22px; gap:10px; }
+ .v7-page .perspective-review-path { gap:14px; }
+ .v7-page .perspective-review-line { gap:8px; }
+ .v7-page .perspective-review-line span { font-size:11px; }
+}
+@media(max-width:600px) {
+ .v7-page .home-eyebrow { font-size:9px; letter-spacing:.025em; gap:7px; }
+ .v7-page .perspective-dossier { position:relative; inset:auto; grid-template-columns:1fr; gap:20px; padding:24px 0 10px; margin-top:5px; }
+ .v7-page .perspective-dossier-heading { font-size:24px; }
+ .v7-page .perspective-review-path { grid-template-columns:1fr 1fr 1.2fr; gap:10px; }
+ .v7-page .perspective-review-line { flex-direction:column; align-items:flex-start; gap:8px; }
+ .v7-page .perspective-review-line span { font-size:11px; }
+ .v7-page .perspective-review-line i { left:0; }
+}
+@media(prefers-reduced-motion:reduce) { .v7-page .site-header nav a::after,.v7-page .gold-cta svg { transition:none; } .v7-page .gold-cta:hover svg { transform:none; } }

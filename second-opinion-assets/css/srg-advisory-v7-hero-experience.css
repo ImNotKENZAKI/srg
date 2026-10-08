@@ -1,0 +1,82 @@
+/* A clear service-led action, with motion on small decorative surfaces. */
+.v7-page .home-copy .hero-cta {
+ position:relative; isolation:isolate; overflow:hidden;
+ max-width:540px; min-height:76px; padding:15px 20px; gap:18px;
+ background:linear-gradient(110deg,#e0c384,#d0b16c 58%,#c6a45d);
+ border-color:#ebd299; border-radius:5px; text-align:left;
+ box-shadow:0 3px 0 #987433;
+ transition:background .2s,transform .2s;
+}
+.v7-page .hero-cta-label { position:relative; z-index:1; min-width:0; }
+.v7-page .hero-cta-label>span { display:block; font-size:13px; line-height:1.3; font-weight:500; letter-spacing:.01em; }
+.v7-page .hero-cta-label strong { display:block; margin-top:3px; font-size:20px; line-height:1.25; font-weight:800; letter-spacing:.015em; }
+.v7-page .hero-cta-arrow { position:relative; z-index:1; display:grid; place-items:center; flex:none; width:44px; height:44px; border:1px solid #173f5b45; border-radius:50%; }
+.v7-page .home-copy .hero-cta .hero-cta-arrow svg { width:26px; height:26px; }
+.v7-page .home-copy .hero-cta:hover { background:#ecd49b; transform:translateY(-1px); }
+.v7-page .home-copy .hero-cta:active { transform:translateY(1px); }
+.v7-page .home-copy .hero-cta:focus-visible { outline:3px solid #fff3cf; outline-offset:5px; }
+.v7-page .hero-cta::after { content:''; position:absolute; z-index:0; top:0; bottom:0; left:-35%; width:32%; pointer-events:none; background:linear-gradient(105deg,transparent,#fff4ce60,transparent); opacity:0; }
+.v7-page .home-savings { position:relative; }
+.v7-page .home-savings::after { content:''; position:absolute; left:0; bottom:-1px; width:110px; height:2px; background:linear-gradient(90deg,#d8919e,#e3c589); transform-origin:left; }
+.v7-page .hero-light-surface { position:absolute; left:12%; top:5%; width:360px; height:360px; border-radius:50%; background:radial-gradient(circle,#d1b87a18,transparent 68%); opacity:.7; }
+.v7-page .home-story .perspective-dossier { border-top-color:#d0be9159; }
+.v7-page .home-story .review-scan { height:4px; top:-2px; }
+.v7-page .home-story .perspective-review-line::after { content:''; position:absolute; top:-21px; left:1px; width:7px; height:7px; border-radius:50%; background:#efd9a6; opacity:.25; pointer-events:none; }
+.v7-page .hero-motion-toggle { position:absolute; right:var(--gutter); bottom:14px; z-index:7; display:flex; align-items:center; gap:8px; min-height:34px; padding:5px 8px; border:0; background:transparent; color:#d8e4dc; font:500 11px/1.4 var(--type-sans); cursor:pointer; }
+.v7-page .hero-motion-toggle[hidden] { display:none; }
+.v7-page .hero-motion-toggle:hover { color:#f2d796; }
+.v7-page .hero-motion-toggle:focus-visible { outline:2px solid #e8cc8d; outline-offset:3px; }
+.v7-page [data-hero-motion-mark] { font-size:14px; width:12px; }
+
+@media(max-width:1100px) {
+ .v7-page .home-copy .hero-cta { gap:14px; padding-inline:16px; }
+ .v7-page .hero-cta-label strong { font-size:18px; }
+ .v7-page .hero-cta-arrow { width:40px; height:40px; }
+}
+@media(min-width:901px) and (max-height:800px) {
+ .v7-page .home-copy .hero-cta { min-height:72px; padding-block:12px; margin-top:16px; }
+ .v7-page .home-copy .home-trust { margin-top:10px; }
+ .v7-page .home-panel { padding-bottom:132px; }
+}
+@media(min-width:901px) and (max-width:1100px) and (max-height:800px) {
+ .v7-page .home-panel { padding-bottom:116px; }
+ .v7-page .home-copy .hero-cta { margin-top:12px; }
+}
+@media(max-width:600px) {
+ .v7-page .home-copy .hero-cta { width:100%; min-height:74px; padding:14px 15px; gap:12px; }
+ .v7-page .hero-cta-label strong { font-size:18px; letter-spacing:0; }
+ .v7-page .hero-cta-label>span { font-size:13px; }
+ .v7-page .hero-cta-arrow { width:36px; height:36px; }
+ .v7-page .home-copy .hero-cta .hero-cta-arrow svg { width:23px; height:23px; }
+ .v7-page .hero-motion-toggle { right:12px; bottom:10px; font-size:10px; gap:5px; }
+ .v7-page .home-scroll-cue { max-width:calc(100% - 135px); font-size:9px; gap:8px; }
+ .v7-page .home-scroll-cue .cue-line { display:none; }
+ .v7-page .hero-light-surface { left:-70px; width:280px; height:280px; }
+}
+@media(max-width:350px) {
+ .v7-page .hero-cta-label strong { font-size:16px; }
+ .v7-page .home-copy .hero-cta { padding-inline:13px; gap:10px; }
+}
+
+@media(prefers-reduced-motion:no-preference) {
+ .v7-page .hero-cta::after { animation:srg-hero-gold-sweep 7s ease-in-out infinite; animation-play-state:paused; }
+ .v7-page .hero-light-surface { animation:srg-hero-light 12s ease-in-out infinite alternate; animation-play-state:paused; }
+ .v7-page .home-story .perspective-review-line::after { animation:srg-hero-review-point 6s ease-in-out infinite; animation-play-state:paused; }
+ .v7-page .home-story .perspective-review-line:nth-child(3)::after { animation-delay:1.2s; }
+ .v7-page .home-story .perspective-review-line:nth-child(4)::after { animation-delay:2.4s; }
+ .v7-page .home-story[data-hero-running=true] .hero-cta[data-hero-visible=true]::after,
+ .v7-page .home-story[data-hero-running=true] .hero-light-surface[data-hero-visible=true],
+ .v7-page .home-story[data-hero-running=true] .perspective-dossier[data-ambient-in-view=true] .perspective-review-line::after { animation-play-state:running; }
+ :root[data-stage-scrolling=true] .v7-page .home-story :is(.hero-cta,.perspective-review-line)::after,
+ :root[data-stage-scrolling=true] .v7-page .home-story .hero-light-surface { animation-play-state:paused !important; }
+ .v7-page .home-story[data-hero-running=true] .hero-cta[data-hero-visible=true]::after { will-change:transform,opacity; }
+}
+@keyframes srg-hero-gold-sweep { 0%,58% { opacity:0; transform:translate3d(0,0,0); } 62% { opacity:.85; } 83% { opacity:.85; } 87%,100% { opacity:0; transform:translate3d(450%,0,0); } }
+@keyframes srg-hero-light { from { transform:translate3d(0,0,0); opacity:.55; } to { transform:translate3d(80px,35px,0); opacity:1; } }
+@keyframes srg-hero-review-point { 0%,70%,100% { opacity:.2; transform:scale(.8); } 30% { opacity:1; transform:scale(1.12); } }
+@media(prefers-reduced-motion:reduce) {
+ .v7-page .home-story :is(.hero-cta,.perspective-review-line)::after,
+ .v7-page .home-story .hero-light-surface { animation:none; }
+ .v7-page .home-copy .hero-cta { transition:none; }
+ .v7-page .home-copy .hero-cta:hover { transform:none; }
+}

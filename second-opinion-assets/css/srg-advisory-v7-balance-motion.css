@@ -1,0 +1,39 @@
+/* Ambient motion lives on separate HTML surfaces; portraits stay stationary. */
+.v7-page :is(.leon-signature,.review-advisor) picture { position:relative; }
+.v7-page :is(.leon-signature picture,.review-advisor picture)::after,
+.v7-page .heather-core::before {
+ content:''; position:absolute; z-index:4; left:0; bottom:0; width:30%; height:3px;
+ background:linear-gradient(90deg,transparent,#eed9a1,#ceb16c,transparent);
+ pointer-events:none; opacity:.8;
+}
+.v7-page .service-symbol { position:relative; }
+.v7-page .service-symbol::after { content:''; position:absolute; right:-3px; top:-3px; width:7px; height:7px; border-radius:50%; background:var(--gold); pointer-events:none; }
+@media(max-width:600px) {
+ .v7-page .heather-core figcaption { display:block; z-index:2; padding:38px 12px 12px; }
+ .v7-page .heather-core strong { font-size:13px; color:#fffaf0; }
+ .v7-page .heather-core figcaption span { display:block; font-size:10px; color:#e5ece7; }
+ .v7-page .gallery-context { display:none; }
+}
+@media(prefers-reduced-motion:no-preference) {
+ .v7-page .perspective-dossier .review-scan { animation:srg-review-scan 8s ease-in-out infinite; animation-play-state:paused; }
+ .v7-page :is(.leon-signature picture,.review-advisor picture)::after,
+ .v7-page .heather-core::before { animation:srg-frame-travel 9s ease-in-out infinite; animation-play-state:paused; }
+ .v7-page .service-symbol::after { animation:srg-review-beacon 5s ease-in-out infinite; animation-play-state:paused; }
+ .v7-page[data-ambient-motion=running] .home-story[data-motion-in-view=true] .perspective-dossier[data-ambient-in-view=true] .review-scan,
+ .v7-page[data-ambient-motion=running] .service-story[data-motion-in-view=true] .leon-signature picture[data-ambient-in-view=true]::after,
+ .v7-page[data-ambient-motion=running] .industry-story[data-motion-in-view=true][data-gallery-phase=gallery] .heather-core[data-ambient-in-view=true]::before,
+ .v7-page[data-ambient-motion=running] .closing[data-motion-in-view=true] .review-advisor picture[data-ambient-in-view=true]::after,
+ .v7-page[data-ambient-motion=running] .service-story[data-motion-in-view=true] .service-copy[aria-hidden=false] .service-symbol[data-ambient-in-view=true]::after { animation-play-state:running; will-change:transform,opacity; }
+ :root[data-stage-scrolling=true] .v7-page .perspective-dossier .review-scan,
+ :root[data-stage-scrolling=true] .v7-page :is(.leon-signature picture,.review-advisor picture)::after,
+ :root[data-stage-scrolling=true] .v7-page .heather-core::before,
+ :root[data-stage-scrolling=true] .v7-page .service-symbol::after { animation-play-state:paused !important; }
+}
+@keyframes srg-review-scan { 0% { transform:translate3d(0,0,0); opacity:0; } 12% { opacity:.85; } 85% { opacity:.85; } 100% { transform:translate3d(525%,0,0); opacity:0; } }
+@keyframes srg-frame-travel { 0%,100% { transform:translate3d(-100%,0,0); opacity:.2; } 50% { transform:translate3d(333%,0,0); opacity:.85; } }
+@keyframes srg-review-beacon { 0%,100% { opacity:.45; transform:scale(.85); } 50% { opacity:1; transform:scale(1); } }
+@media(prefers-reduced-motion:reduce) {
+ .v7-page .perspective-dossier .review-scan,
+ .v7-page :is(.leon-signature picture,.review-advisor picture)::after,
+ .v7-page .heather-core::before,.v7-page .service-symbol::after { animation:none; }
+}
