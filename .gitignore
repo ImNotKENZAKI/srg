@@ -1,0 +1,23 @@
+# Local work and delivery artifacts are not production source.
+/output/
+/deliverables/
+/advisory-preview-review/
+/preview-tools/
+/preview-audit-*/
+/.audit-base-*/
+/SRG-Landing-Pages-GitHub-Vercel-Ready-*/
+/SRG-Large-Wholesaler-Heroes-Final/
+/srg-*-preview.html
+*.zip
+node_modules/
+.vercel/
+.cache/
+.DS_Store
+Thumbs.db
+.env*
+!.env.example
+
+# Local assistant/configuration directories.
+/.agents/
+/.codex/
+/.aws/

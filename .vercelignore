@@ -1,0 +1,26 @@
+# Keep working files and archived handoffs out of static deployments.
+output/
+deliverables/
+advisory-preview-review/
+preview-tools/
+preview-audit-*/
+.audit-base-*/
+SRG-Landing-Pages-GitHub-Vercel-Ready-*/
+SRG-Large-Wholesaler-Heroes-Final/
+srg-*-preview.html
+*.zip
+node_modules/
+.agents/
+.codex/
+.aws/
+.env*
+AGENTS.md
+README.md
+README-*.txt
+SRG-*.txt
+SRG-*.md
+TEAM-*.txt
+GENERATED-TEAM-ASSET-MAP.txt
+PRODUCTION-REVISION-*.txt
+
+# Font licenses under second-opinion-assets/fonts remain included.
